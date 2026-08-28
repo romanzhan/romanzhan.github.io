@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-CDpF9Mcb.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-DPa3KHQM.css">
+    <script type="module" crossorigin src="/assets/main-Bmf_skb9.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-D_1sGN4Q.css">
   </head>
   <body class="flex min-h-dvh flex-col">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -249,8 +249,8 @@
         </div>
     <header
       x-data="siteHeader"
-      x-bind:class="{ '-translate-y-full': $store.header.away, 'shadow-sm': $store.header.scrolled }"
-      class="sticky top-0 z-10 bg-cream transition-transform duration-200"
+      x-bind:class="$store.header.scrolled && 'shadow-sm'"
+      class="sticky top-0 z-10 bg-cream transition-shadow duration-200"
     >
       <div class="page-container flex h-(--header-h) items-center gap-2">
         <button
@@ -407,8 +407,7 @@
         x-data="offlineNotice"
         x-show="offline"
         x-cloak
-        x-bind:class="$store.header.away ? 'top-0' : 'top-(--header-h)'"
-        class="sticky z-10 bg-warning-bg"
+        class="sticky top-(--header-h) z-10 bg-warning-bg"
         role="status"
       >
       <div
