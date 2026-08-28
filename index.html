@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-Dy-1LrD0.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-B4X_Yczg.css">
+    <script type="module" crossorigin src="/assets/main-CKkW1bUP.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-DsWQ1zBl.css">
   </head>
   <body class="flex min-h-dvh flex-col">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -226,7 +226,8 @@
                   " >
                       <span class="inline-flex items-center gap-2">
                         
-                        Seguir
+                        <span 
+                          >Seguir</span>
                         
                       </span>
                     </a>
@@ -494,7 +495,8 @@
                   " >
                       <span class="inline-flex items-center gap-2">
                         
-                        Ver sillas
+                        <span 
+                          >Ver sillas</span>
                         
                       </span>
                     </a>
@@ -514,7 +516,8 @@
                   " >
                       <span class="inline-flex items-center gap-2">
                         
-                        Cómo funciona
+                        <span 
+                          >Cómo funciona</span>
                         
                       </span>
                     </a>
@@ -695,6 +698,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('silla-evolutiva')"
+                                x-bind:aria-pressed="$store.wishlist.has('silla-evolutiva')"
+                                x-bind:aria-label="$store.wishlist.has('silla-evolutiva')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -702,12 +709,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('silla-evolutiva') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('silla-evolutiva')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('silla-evolutiva')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -730,6 +746,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 129.960</span>
                             
                               </p>
@@ -746,30 +763,26 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
+                        
+                                    <a href="/sillas/silla-evolutiva/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                  transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                  
+                                  min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                  
+                                  
+                                  w-full
+                                    bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
                                     
                                     
                                     
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                                  " >
+                                      <span class="inline-flex items-center gap-2">
                                         
-                                        Agregar
+                                        <span 
+                                          >Elegir color</span>
                                         
                                       </span>
-                                  </button>
+                                    </a>
                           </div>
                         </article>
                       </div>
@@ -807,6 +820,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('torre-aprendizaje')"
+                                x-bind:aria-pressed="$store.wishlist.has('torre-aprendizaje')"
+                                x-bind:aria-label="$store.wishlist.has('torre-aprendizaje')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -814,12 +831,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('torre-aprendizaje') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('torre-aprendizaje')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('torre-aprendizaje')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -840,6 +866,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 199.900</span>
                             
                               </p>
@@ -856,30 +883,61 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
-                                    
-                                    
-                                    
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                        
+                                  <span x-show="!$store.cart.has('torre-aprendizaje', '')">
+                                      <button
+                                        type="button"
+                                        x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                         
-                                        Agregar
                                         
-                                      </span>
-                                  </button>
+                                        
+                                        
+                                        class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                                      
+                                      
+                                      
+                                    "
+                                      >
+                                          <span class="inline-flex items-center gap-2 ">
+                                            
+                                            <span 
+                                              >Agregar</span>
+                                            
+                                          </span>
+                                      </button>
+                                  </span>
+                                  <span x-show="$store.cart.has('torre-aprendizaje', '')" x-cloak>
+                                      <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      
+                                      border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                                      
+                                      
+                                    " >
+                                        <span class="inline-flex items-center gap-2">
+                                          <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-check"></use></svg>
+                                    
+                                          <span 
+                                            >En el carrito</span>
+                                          
+                                        </span>
+                                      </a>
+                                  </span>
                           </div>
                         </article>
                       </div>
@@ -917,6 +975,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('silla-alta')"
+                                x-bind:aria-pressed="$store.wishlist.has('silla-alta')"
+                                x-bind:aria-label="$store.wishlist.has('silla-alta')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -924,12 +986,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('silla-alta') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('silla-alta')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('silla-alta')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -952,6 +1023,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 154.850</span>
                             
                               </p>
@@ -968,30 +1040,26 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
+                        
+                                    <a href="/sillas/silla-alta/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                  transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                  
+                                  min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                  
+                                  
+                                  w-full
+                                    bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
                                     
                                     
                                     
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                                  " >
+                                      <span class="inline-flex items-center gap-2">
                                         
-                                        Agregar
+                                        <span 
+                                          >Elegir color</span>
                                         
                                       </span>
-                                  </button>
+                                    </a>
                           </div>
                         </article>
                       </div>
@@ -1029,6 +1097,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('set-mesa-sillas')"
+                                x-bind:aria-pressed="$store.wishlist.has('set-mesa-sillas')"
+                                x-bind:aria-label="$store.wishlist.has('set-mesa-sillas')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -1036,12 +1108,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('set-mesa-sillas') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('set-mesa-sillas')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('set-mesa-sillas')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -1062,6 +1143,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 164.850</span>
                             
                               </p>
@@ -1078,30 +1160,61 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
-                                    
-                                    
-                                    
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                        
+                                  <span x-show="!$store.cart.has('set-mesa-sillas', '')">
+                                      <button
+                                        type="button"
+                                        x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                         
-                                        Agregar
                                         
-                                      </span>
-                                  </button>
+                                        
+                                        
+                                        class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                                      
+                                      
+                                      
+                                    "
+                                      >
+                                          <span class="inline-flex items-center gap-2 ">
+                                            
+                                            <span 
+                                              >Agregar</span>
+                                            
+                                          </span>
+                                      </button>
+                                  </span>
+                                  <span x-show="$store.cart.has('set-mesa-sillas', '')" x-cloak>
+                                      <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      
+                                      border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                                      
+                                      
+                                    " >
+                                        <span class="inline-flex items-center gap-2">
+                                          <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-check"></use></svg>
+                                    
+                                          <span 
+                                            >En el carrito</span>
+                                          
+                                        </span>
+                                      </a>
+                                  </span>
                           </div>
                         </article>
                       </div>
@@ -1139,6 +1252,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('silla-alta-dos-escalones')"
+                                x-bind:aria-pressed="$store.wishlist.has('silla-alta-dos-escalones')"
+                                x-bind:aria-label="$store.wishlist.has('silla-alta-dos-escalones')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -1146,12 +1263,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('silla-alta-dos-escalones') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('silla-alta-dos-escalones')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('silla-alta-dos-escalones')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -1172,6 +1298,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 199.850</span>
                             
                               </p>
@@ -1188,30 +1315,61 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
-                                    
-                                    
-                                    
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                        
+                                  <span x-show="!$store.cart.has('silla-alta-dos-escalones', '')">
+                                      <button
+                                        type="button"
+                                        x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                         
-                                        Agregar
                                         
-                                      </span>
-                                  </button>
+                                        
+                                        
+                                        class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                                      
+                                      
+                                      
+                                    "
+                                      >
+                                          <span class="inline-flex items-center gap-2 ">
+                                            
+                                            <span 
+                                              >Agregar</span>
+                                            
+                                          </span>
+                                      </button>
+                                  </span>
+                                  <span x-show="$store.cart.has('silla-alta-dos-escalones', '')" x-cloak>
+                                      <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      
+                                      border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                                      
+                                      
+                                    " >
+                                        <span class="inline-flex items-center gap-2">
+                                          <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-check"></use></svg>
+                                    
+                                          <span 
+                                            >En el carrito</span>
+                                          
+                                        </span>
+                                      </a>
+                                  </span>
                           </div>
                         </article>
                       </div>
@@ -1249,6 +1407,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('banquito-estrella')"
+                                x-bind:aria-pressed="$store.wishlist.has('banquito-estrella')"
+                                x-bind:aria-label="$store.wishlist.has('banquito-estrella')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -1256,12 +1418,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('banquito-estrella') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('banquito-estrella')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('banquito-estrella')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -1282,6 +1453,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 79.950</span>
                             
                               </p>
@@ -1298,30 +1470,61 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
-                                    
-                                    
-                                    
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                        
+                                  <span x-show="!$store.cart.has('banquito-estrella', '')">
+                                      <button
+                                        type="button"
+                                        x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                         
-                                        Agregar
                                         
-                                      </span>
-                                  </button>
+                                        
+                                        
+                                        class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                                      
+                                      
+                                      
+                                    "
+                                      >
+                                          <span class="inline-flex items-center gap-2 ">
+                                            
+                                            <span 
+                                              >Agregar</span>
+                                            
+                                          </span>
+                                      </button>
+                                  </span>
+                                  <span x-show="$store.cart.has('banquito-estrella', '')" x-cloak>
+                                      <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      
+                                      border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                                      
+                                      
+                                    " >
+                                        <span class="inline-flex items-center gap-2">
+                                          <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-check"></use></svg>
+                                    
+                                          <span 
+                                            >En el carrito</span>
+                                          
+                                        </span>
+                                      </a>
+                                  </span>
                           </div>
                         </article>
                       </div>
@@ -1359,6 +1562,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('silla-para-bebe')"
+                                x-bind:aria-pressed="$store.wishlist.has('silla-para-bebe')"
+                                x-bind:aria-label="$store.wishlist.has('silla-para-bebe')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -1366,12 +1573,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('silla-para-bebe') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('silla-para-bebe')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('silla-para-bebe')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -1392,6 +1608,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 129.000</span>
                             
                               </p>
@@ -1408,30 +1625,61 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
-                                    
-                                    
-                                    
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                        
+                                  <span x-show="!$store.cart.has('silla-para-bebe', '')">
+                                      <button
+                                        type="button"
+                                        x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                         
-                                        Agregar
                                         
-                                      </span>
-                                  </button>
+                                        
+                                        
+                                        class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                                      
+                                      
+                                      
+                                    "
+                                      >
+                                          <span class="inline-flex items-center gap-2 ">
+                                            
+                                            <span 
+                                              >Agregar</span>
+                                            
+                                          </span>
+                                      </button>
+                                  </span>
+                                  <span x-show="$store.cart.has('silla-para-bebe', '')" x-cloak>
+                                      <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      
+                                      border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                                      
+                                      
+                                    " >
+                                        <span class="inline-flex items-center gap-2">
+                                          <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-check"></use></svg>
+                                    
+                                          <span 
+                                            >En el carrito</span>
+                                          
+                                        </span>
+                                      </a>
+                                  </span>
                           </div>
                         </article>
                       </div>
@@ -1469,6 +1717,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('pata-pata')"
+                                x-bind:aria-pressed="$store.wishlist.has('pata-pata')"
+                                x-bind:aria-label="$store.wishlist.has('pata-pata')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -1476,12 +1728,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('pata-pata') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('pata-pata')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('pata-pata')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -1502,6 +1763,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 59.900</span>
                             
                               </p>
@@ -1518,30 +1780,61 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
-                                    
-                                    
-                                    
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                        
+                                  <span x-show="!$store.cart.has('pata-pata', '')">
+                                      <button
+                                        type="button"
+                                        x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                         
-                                        Agregar
                                         
-                                      </span>
-                                  </button>
+                                        
+                                        
+                                        class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                                      
+                                      
+                                      
+                                    "
+                                      >
+                                          <span class="inline-flex items-center gap-2 ">
+                                            
+                                            <span 
+                                              >Agregar</span>
+                                            
+                                          </span>
+                                      </button>
+                                  </span>
+                                  <span x-show="$store.cart.has('pata-pata', '')" x-cloak>
+                                      <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      
+                                      border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                                      
+                                      
+                                    " >
+                                        <span class="inline-flex items-center gap-2">
+                                          <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-check"></use></svg>
+                                    
+                                          <span 
+                                            >En el carrito</span>
+                                          
+                                        </span>
+                                      </a>
+                                  </span>
                           </div>
                         </article>
                       </div>
@@ -1579,6 +1872,10 @@
                         
                             <button
                               type="button"
+                                x-on:click="$store.wishlist.toggle('equilibristas')"
+                                x-bind:aria-pressed="$store.wishlist.has('equilibristas')"
+                                x-bind:aria-label="$store.wishlist.has('equilibristas')
+                                  ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                               class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                               aria-label="Guardar en favoritos"
                               aria-pressed="false"
@@ -1586,12 +1883,21 @@
                               <span
                                 class="flex size-9 items-center justify-center rounded-full bg-cream
                                   transition-colors duration-150 group-hover/heart:bg-sand
-                                  text-charcoal"
+                                  "
+                                  x-bind:class="$store.wishlist.has('equilibristas') ? 'text-clay' : 'text-charcoal'"
                               >
-                                <svg
-                                  class="icon-stroke size-5 shrink-0 fill-none"
-                                  aria-hidden="true"
-                                ><use href="#icon-heart"></use></svg>
+                                  <span x-show="!$store.wishlist.has('equilibristas')">
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
+                                  <span x-show="$store.wishlist.has('equilibristas')" x-cloak>
+                                    <svg
+                                      class="icon-stroke size-5 shrink-0 fill-current"
+                                      aria-hidden="true"
+                                    ><use href="#icon-heart"></use></svg>
+                                  </span>
                               </span>
                             </button>
                           </div>
@@ -1612,6 +1918,7 @@
                                     
                                     text-body
                                     "
+                                  
                                 >$ 20.000</span>
                             
                               </p>
@@ -1628,30 +1935,61 @@
                         </div>
                         
                           <div class="relative z-10 mt-auto">
-                                  <button
-                                    type="button"
-                                    
-                                    
-                                    
-                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                                
-                                min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                                
-                                
-                                w-full
-                                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                                  
-                                  
-                                  
-                                "
-                                  >
-                                      <span class="inline-flex items-center gap-2 ">
+                        
+                                  <span x-show="!$store.cart.has('equilibristas', '')">
+                                      <button
+                                        type="button"
+                                        x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                         
-                                        Agregar
                                         
-                                      </span>
-                                  </button>
+                                        
+                                        
+                                        class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                                      
+                                      
+                                      
+                                    "
+                                      >
+                                          <span class="inline-flex items-center gap-2 ">
+                                            
+                                            <span 
+                                              >Agregar</span>
+                                            
+                                          </span>
+                                      </button>
+                                  </span>
+                                  <span x-show="$store.cart.has('equilibristas', '')" x-cloak>
+                                      <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                                    
+                                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                                    
+                                    
+                                    w-full
+                                      
+                                      border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                                      
+                                      
+                                    " >
+                                        <span class="inline-flex items-center gap-2">
+                                          <svg
+                                      class="icon-stroke size-5 shrink-0 fill-none"
+                                      aria-hidden="true"
+                                    ><use href="#icon-check"></use></svg>
+                                    
+                                          <span 
+                                            >En el carrito</span>
+                                          
+                                        </span>
+                                      </a>
+                                  </span>
                           </div>
                         </article>
                       </div>
@@ -1727,6 +2065,7 @@
                               
                               text-body
                               "
+                            
                           >$ 129.000</span>
                       
                         </p>
@@ -1775,6 +2114,7 @@
                               
                               text-body
                               "
+                            
                           >$ 129.960</span>
                       
                         </p>
@@ -1821,6 +2161,7 @@
                               
                               text-body
                               "
+                            
                           >$ 199.900</span>
                       
                         </p>
@@ -1922,6 +2263,7 @@
                           text-h2 lg:text-h2-lg
                           
                           "
+                        
                       >$ 129.960</span>
                   
                     </p>
@@ -1944,7 +2286,8 @@
                   " >
                       <span class="inline-flex items-center gap-2">
                         
-                        Ver la silla
+                        <span 
+                          >Ver la silla</span>
                         
                       </span>
                     </a>
@@ -2035,7 +2378,8 @@
                 " >
                     <span class="inline-flex items-center gap-2">
                       
-                      Ver la Silla Evolutiva
+                      <span 
+                        >Ver la Silla Evolutiva</span>
                       
                     </span>
                   </a>
@@ -3785,7 +4129,42 @@
             </span>
           </div>
         
-          <template x-if="ready && !lines.length">
+          <template x-if="failed">
+            <div class="page-container py-10 text-center">
+              <p class="max-w-prose text-lead">No pudimos cargar esta sección. Revisá tu conexión y probá de nuevo.</p>
+              <div class="mt-4 flex justify-center">
+                  <button
+                    type="button"
+                    x-on:click="load()"
+                    
+                    
+                    
+                    
+                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                
+                min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                
+                
+                
+                  
+                  border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                  
+                  
+                "
+                  >
+                      <span class="inline-flex items-center gap-2 ">
+                        
+                        <span 
+                          >Reintentar</span>
+                        
+                      </span>
+                  </button>
+              </div>
+            </div>
+          </template>
+        
+          <template x-if="ready && !failed && !lines.length">
             <div class="page-container py-10 text-center">
               <p class="text-lead">Tu carrito está vacío.</p>
               <div class="mt-4 flex justify-center">
@@ -3803,7 +4182,8 @@
                 " >
                     <span class="inline-flex items-center gap-2">
                       
-                      Ver sillas
+                      <span 
+                        >Ver sillas</span>
                       
                     </span>
                   </a>
@@ -3811,7 +4191,7 @@
             </div>
           </template>
         
-          <template x-if="ready && lines.length">
+          <template x-if="ready && !failed && lines.length">
             <div
               class="flex min-h-0 flex-1 flex-col
                 "
@@ -3875,44 +4255,68 @@
                       <p x-show="!line.inStock" class="text-small text-warning">Quedó sin stock</p>
                   
                       <div class="mt-1 flex flex-wrap items-center justify-between gap-2">
-                        <div class="flex items-center rounded-md border border-border bg-sand">
-                          <button
-                            type="button"
-                            x-on:click="step(line, -1)"
-                            x-bind:disabled="line.qty <= 1"
-                            class="flex size-10 items-center justify-center rounded-l-md text-charcoal
-                              hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45"
-                          >
-                            <span class="sr-only">Restar uno</span>
-                            <svg
-                              class="icon-stroke size-4 shrink-0 fill-none"
-                              aria-hidden="true"
-                            ><use href="#icon-minus"></use></svg>
-                          </button>
-                  
-                          <span class="min-w-8 text-center text-body" x-text="line.qty"></span>
-                  
-                          <button
-                            type="button"
-                            x-on:click="step(line, 1)"
-                            x-bind:disabled="line.atMax"
-                            class="flex size-10 items-center justify-center rounded-r-md text-charcoal
-                              hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45"
-                          >
-                            <span class="sr-only">Sumar uno</span>
-                            <svg
-                              class="icon-stroke size-4 shrink-0 fill-none"
-                              aria-hidden="true"
-                            ><use href="#icon-plus"></use></svg>
-                          </button>
+                        <div class="flex flex-col gap-2"
+                          
+                        >
+                          <label for="qty-linea" class="sr-only"
+                            >Cantidad</label>
+                        
+                          <div class="flex w-fit items-center rounded-md border border-border bg-sand">
+                            <button
+                              type="button"
+                              class="flex size-12 items-center justify-center rounded-l-md text-charcoal
+                                hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45 lg:size-11"
+                              aria-label="Restar uno"
+                              :disabled="line.qty &lt;&#x3D; 1"
+                              @click="step(line, -1)"
+                            >
+                              <svg
+                                class="icon-stroke size-5 shrink-0 fill-none"
+                                aria-hidden="true"
+                              ><use href="#icon-minus"></use></svg>
+                            </button>
+                        
+                              <span
+                                class="flex h-12 w-12 items-center justify-center border-x border-border bg-sand
+                                  text-center text-body tabular-nums lg:h-11"
+                                x-text="line.qty"
+                              ></span>
+                        
+                            <button
+                              type="button"
+                              class="flex size-12 items-center justify-center rounded-r-md text-charcoal
+                                hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45 lg:size-11"
+                              aria-label="Sumar uno"
+                              :disabled="line.atMax"
+                              @click="step(line, 1)"
+                            >
+                              <svg
+                                class="icon-stroke size-5 shrink-0 fill-none"
+                                aria-hidden="true"
+                              ><use href="#icon-plus"></use></svg>
+                            </button>
+                          </div>
+                        
+                          <p id="qty-linea-message" class="min-h-6 text-small text-charcoal/70">
+                            <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
+                          </p>
                         </div>
                   
-                        <p class="text-body font-medium" x-text="fmt(line.sum)"></p>
+                        <div class="flex flex-col gap-1 ">
+                          <p class="flex flex-wrap items-baseline gap-2">
+                        
+                            <span
+                              class="font-semibold tabular-nums
+                                
+                                text-body
+                                "
+                              x-text="fmt(line.sum)"
+                            >$ 0</span>
+                        
+                          </p>
+                        
+                        </div>
                       </div>
-                  
-                      <p x-show="line.atMax" class="text-caption text-charcoal/70">
-                        Máximo 10 por pedido
-                      </p>
                     </div>
                   </li>
                 </template>
@@ -3925,7 +4329,20 @@
                 <div class="flex flex-col gap-2">
                   <div class="flex items-baseline justify-between gap-4">
                     <span class="text-small text-charcoal/70">Subtotal</span>
-                    <span class="text-body" x-text="fmt(subtotal)"></span>
+                    <div class="flex flex-col gap-1 ">
+                      <p class="flex flex-wrap items-baseline gap-2">
+                    
+                        <span
+                          class="font-semibold tabular-nums
+                            
+                            text-body
+                            "
+                          x-text="fmt(subtotal)"
+                        >$ 0</span>
+                    
+                      </p>
+                    
+                    </div>
                   </div>
                 
                   <div class="flex items-baseline justify-between gap-4">
@@ -3935,7 +4352,20 @@
                 
                   <div class="mt-1 flex items-baseline justify-between gap-4 border-t border-line pt-3">
                     <span class="text-body font-medium">Total</span>
-                    <span class="font-display text-h4 lg:text-h4-lg" x-text="fmt(subtotal)"></span>
+                    <div class="flex flex-col gap-1 ">
+                      <p class="flex flex-wrap items-baseline gap-2">
+                    
+                        <span
+                          class="font-semibold tabular-nums
+                            
+                            
+                            text-h4 lg:text-h4-lg"
+                          x-text="fmt(subtotal)"
+                        >$ 0</span>
+                    
+                      </p>
+                    
+                    </div>
                   </div>
                 </div>
         
@@ -3954,7 +4384,8 @@
                   " >
                       <span class="inline-flex items-center gap-2">
                         
-                        Finalizar compra
+                        <span 
+                          >Finalizar compra</span>
                         
                       </span>
                     </a>
@@ -3972,7 +4403,8 @@
                     " >
                         <span class="inline-flex items-center gap-2">
                           
-                          Ver carrito
+                          <span 
+                            >Ver carrito</span>
                           
                         </span>
                       </a>
@@ -4372,6 +4804,8 @@
                   x-on:click="load()"
                   
                   
+                  
+                  
                   class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
               transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
               
@@ -4387,7 +4821,8 @@
                 >
                     <span class="inline-flex items-center gap-2 ">
                       
-                      Reintentar
+                      <span 
+                        >Reintentar</span>
                       
                     </span>
                 </button>
@@ -4416,7 +4851,8 @@
               " >
                   <span class="inline-flex items-center gap-2">
                     
-                    Ver catálogo
+                    <span 
+                      >Ver catálogo</span>
                     
                   </span>
                 </a>
@@ -4462,16 +4898,23 @@
                             class="search-hit line-clamp-2 min-w-0 flex-1 text-body"
                           ></span>
                           <span class="flex shrink-0 items-baseline gap-2">
-                            <span
-                              x-text="option.price"
-                              x-bind:class="option.inStock ? 'font-semibold' : 'text-charcoal/70'"
-                              class="text-body tabular-nums"
-                            ></span>
-                            <s
-                              x-show="option.oldPrice"
-                              x-text="option.oldPrice"
-                              class="text-small text-charcoal/70 tabular-nums"
-                            ></s>
+                            <div class="flex flex-col gap-1 ">
+                              <p class="flex flex-wrap items-baseline gap-2">
+                            
+                                <span
+                                  class="font-semibold tabular-nums
+                                    
+                                    text-body
+                                    "
+                                  x-text="option.price"
+                                >$ 0</span>
+                            
+                                  <s class="text-small tabular-nums text-charcoal/70"
+                                    x-text="option.oldPrice" x-show="option.oldPrice" x-cloak
+                                    ></s>
+                              </p>
+                            
+                            </div>
                           </span>
                         </a>
                       </li>

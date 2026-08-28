@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-Dy-1LrD0.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-B4X_Yczg.css">
+    <script type="module" crossorigin src="/assets/main-CKkW1bUP.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-DsWQ1zBl.css">
   </head>
   <body class="flex min-h-dvh flex-col">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -226,7 +226,8 @@
                   " >
                       <span class="inline-flex items-center gap-2">
                         
-                        Seguir
+                        <span 
+                          >Seguir</span>
                         
                       </span>
                     </a>
@@ -482,89 +483,159 @@
       
         <div class="mt-6 flex flex-col gap-4 lg:mt-8">
           <div class="flex items-center gap-3">
-              <button
-                type="button"
-                x-on:click="$store.overlay.open('filtros')"
-                x-bind:aria-expanded="$store.overlay.is('filtros')"
-                aria-controls="filtros-catalogo"
-                class="flex min-h-11 flex-1 items-center justify-center gap-2 rounded-lg border
-                  border-charcoal px-4 text-body font-medium transition-colors duration-150
-                  hover:bg-sand-hover active:bg-sand-active lg:hidden"
-              >
-                <svg
+              <div class="flex-1 lg:hidden">
+                  <button
+                    type="button"
+                    x-on:click="$store.overlay.open(&#x27;filtros&#x27;)"
+                    aria-controls="filtros-catalogo"
+                    x-bind:aria-expanded="$store.overlay.is(&#x27;filtros&#x27;)"
+                    
+                    
+                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                
+                min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                
+                
+                w-full
+                  
+                  border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                  
+                  
+                "
+                  >
+                      <span class="inline-flex items-center gap-2 ">
+                        <svg
                   class="icon-stroke size-5 shrink-0 fill-none"
                   aria-hidden="true"
                 ><use href="#icon-sliders-horizontal"></use></svg>
-                <span x-text="$store.catalog.filterLabel">Filtrar</span>
-              </button>
+                
+                        <span x-text="$store.catalog.filterLabel"
+                          >Filtrar</span>
+                        
+                      </span>
+                  </button>
+              </div>
         
               <div class="hidden items-center gap-3 lg:flex">
                   <span class="text-small font-medium">Color de madera</span>
-                  <div class="flex flex-wrap items-center gap-2">
-                      <button
-                        type="button"
-                        x-on:click="$store.catalog.toggleColor('roble')"
-                        x-bind:aria-pressed="$store.catalog.colors.includes('roble')"
-                        x-bind:class="$store.catalog.colors.includes('roble')
-                          ? 'border-clay bg-sand-active' : 'border-line hover:bg-sand-hover'"
-                        class="flex min-h-11 items-center gap-2 rounded-lg border px-3 text-small
-                          transition-colors duration-150"
-                      >
-                        <span
-                          class="size-4 shrink-0 rounded-full border border-border"
-                          style="background-color: #C69C6D"
-                          aria-hidden="true"
-                        ></span>
-                        Roble americano
-                      </button>
-                      <button
-                        type="button"
-                        x-on:click="$store.catalog.toggleColor('nogal')"
-                        x-bind:aria-pressed="$store.catalog.colors.includes('nogal')"
-                        x-bind:class="$store.catalog.colors.includes('nogal')
-                          ? 'border-clay bg-sand-active' : 'border-line hover:bg-sand-hover'"
-                        class="flex min-h-11 items-center gap-2 rounded-lg border px-3 text-small
-                          transition-colors duration-150"
-                      >
-                        <span
-                          class="size-4 shrink-0 rounded-full border border-border"
-                          style="background-color: #5E3D28"
-                          aria-hidden="true"
-                        ></span>
-                        Nogal
-                      </button>
-                      <button
-                        type="button"
-                        x-on:click="$store.catalog.toggleColor('blanco')"
-                        x-bind:aria-pressed="$store.catalog.colors.includes('blanco')"
-                        x-bind:class="$store.catalog.colors.includes('blanco')
-                          ? 'border-clay bg-sand-active' : 'border-line hover:bg-sand-hover'"
-                        class="flex min-h-11 items-center gap-2 rounded-lg border px-3 text-small
-                          transition-colors duration-150"
-                      >
-                        <span
-                          class="size-4 shrink-0 rounded-full border border-border"
-                          style="background-color: #F2EFE9"
-                          aria-hidden="true"
-                        ></span>
-                        Blanco
-                      </button>
-                      <button
-                        type="button"
-                        x-on:click="$store.catalog.toggleColor('crudo')"
-                        x-bind:aria-pressed="$store.catalog.colors.includes('crudo')"
-                        x-bind:class="$store.catalog.colors.includes('crudo')
-                          ? 'border-clay bg-sand-active' : 'border-line hover:bg-sand-hover'"
-                        class="flex min-h-11 items-center gap-2 rounded-lg border px-3 text-small
-                          transition-colors duration-150"
-                      >
-                        <span
-                          class="size-4 shrink-0 rounded-full border border-border"
-                          style="background-color: #DCC9A8"
-                          aria-hidden="true"
-                        ></span>
-                        Crudo
-                      </button>
+                  <div class="flex flex-wrap items-center gap-4">
+                      <label class="flex min-h-11 items-start gap-3
+                        cursor-pointer">
+                        <span class="relative mt-1 flex size-6 shrink-0 items-center justify-center lg:size-5">
+                          <input
+                            type="checkbox"
+                            
+                            value="roble"
+                            x-model="$store.catalog.colors"
+                            x-on:change="$store.catalog.commit()"
+                            
+                            
+                            class="peer size-full appearance-none rounded-sm border border-border bg-sand
+                              checked:border-clay checked:bg-clay disabled:cursor-default"
+                          />
+                          <span class="pointer-events-none absolute text-cream opacity-0 peer-checked:opacity-100">
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                          </span>
+                        </span>
+                          <span
+                            class="mt-0.5 size-5 shrink-0 rounded-full border border-border"
+                            style="background-color: #C69C6D"
+                            aria-hidden="true"
+                          ></span>
+                      
+                        <span class="text-body">Roble americano</span>
+                      </label>
+                      <label class="flex min-h-11 items-start gap-3
+                        cursor-pointer">
+                        <span class="relative mt-1 flex size-6 shrink-0 items-center justify-center lg:size-5">
+                          <input
+                            type="checkbox"
+                            
+                            value="nogal"
+                            x-model="$store.catalog.colors"
+                            x-on:change="$store.catalog.commit()"
+                            
+                            
+                            class="peer size-full appearance-none rounded-sm border border-border bg-sand
+                              checked:border-clay checked:bg-clay disabled:cursor-default"
+                          />
+                          <span class="pointer-events-none absolute text-cream opacity-0 peer-checked:opacity-100">
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                          </span>
+                        </span>
+                          <span
+                            class="mt-0.5 size-5 shrink-0 rounded-full border border-border"
+                            style="background-color: #5E3D28"
+                            aria-hidden="true"
+                          ></span>
+                      
+                        <span class="text-body">Nogal</span>
+                      </label>
+                      <label class="flex min-h-11 items-start gap-3
+                        cursor-pointer">
+                        <span class="relative mt-1 flex size-6 shrink-0 items-center justify-center lg:size-5">
+                          <input
+                            type="checkbox"
+                            
+                            value="blanco"
+                            x-model="$store.catalog.colors"
+                            x-on:change="$store.catalog.commit()"
+                            
+                            
+                            class="peer size-full appearance-none rounded-sm border border-border bg-sand
+                              checked:border-clay checked:bg-clay disabled:cursor-default"
+                          />
+                          <span class="pointer-events-none absolute text-cream opacity-0 peer-checked:opacity-100">
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                          </span>
+                        </span>
+                          <span
+                            class="mt-0.5 size-5 shrink-0 rounded-full border border-border"
+                            style="background-color: #F2EFE9"
+                            aria-hidden="true"
+                          ></span>
+                      
+                        <span class="text-body">Blanco</span>
+                      </label>
+                      <label class="flex min-h-11 items-start gap-3
+                        cursor-pointer">
+                        <span class="relative mt-1 flex size-6 shrink-0 items-center justify-center lg:size-5">
+                          <input
+                            type="checkbox"
+                            
+                            value="crudo"
+                            x-model="$store.catalog.colors"
+                            x-on:change="$store.catalog.commit()"
+                            
+                            
+                            class="peer size-full appearance-none rounded-sm border border-border bg-sand
+                              checked:border-clay checked:bg-clay disabled:cursor-default"
+                          />
+                          <span class="pointer-events-none absolute text-cream opacity-0 peer-checked:opacity-100">
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                          </span>
+                        </span>
+                          <span
+                            class="mt-0.5 size-5 shrink-0 rounded-full border border-border"
+                            style="background-color: #DCC9A8"
+                            aria-hidden="true"
+                          ></span>
+                      
+                        <span class="text-body">Crudo</span>
+                      </label>
                   </div>
         
               </div>
@@ -727,6 +798,10 @@
                 
                     <button
                       type="button"
+                        x-on:click="$store.wishlist.toggle('silla-evolutiva')"
+                        x-bind:aria-pressed="$store.wishlist.has('silla-evolutiva')"
+                        x-bind:aria-label="$store.wishlist.has('silla-evolutiva')
+                          ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                       class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                       aria-label="Guardar en favoritos"
                       aria-pressed="false"
@@ -734,12 +809,21 @@
                       <span
                         class="flex size-9 items-center justify-center rounded-full bg-cream
                           transition-colors duration-150 group-hover/heart:bg-sand
-                          text-charcoal"
+                          "
+                          x-bind:class="$store.wishlist.has('silla-evolutiva') ? 'text-clay' : 'text-charcoal'"
                       >
-                        <svg
-                          class="icon-stroke size-5 shrink-0 fill-none"
-                          aria-hidden="true"
-                        ><use href="#icon-heart"></use></svg>
+                          <span x-show="!$store.wishlist.has('silla-evolutiva')">
+                            <svg
+                              class="icon-stroke size-5 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-heart"></use></svg>
+                          </span>
+                          <span x-show="$store.wishlist.has('silla-evolutiva')" x-cloak>
+                            <svg
+                              class="icon-stroke size-5 shrink-0 fill-current"
+                              aria-hidden="true"
+                            ><use href="#icon-heart"></use></svg>
+                          </span>
                       </span>
                     </button>
                   </div>
@@ -762,6 +846,7 @@
                             
                             text-body
                             "
+                          
                         >$ 129.960</span>
                     
                       </p>
@@ -778,30 +863,26 @@
                 </div>
                 
                   <div class="relative z-10 mt-auto">
-                          <button
-                            type="button"
+                
+                            <a href="/sillas/silla-evolutiva/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                          transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                          
+                          min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                          
+                          
+                          w-full
+                            bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
                             
                             
                             
-                            class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                        transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                        
-                        min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                        
-                        
-                        w-full
-                          bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                          
-                          
-                          
-                        "
-                          >
-                              <span class="inline-flex items-center gap-2 ">
+                          " >
+                              <span class="inline-flex items-center gap-2">
                                 
-                                Agregar
+                                <span 
+                                  >Elegir color</span>
                                 
                               </span>
-                          </button>
+                            </a>
                   </div>
                 </article>
               </div>
@@ -845,6 +926,10 @@
                 
                     <button
                       type="button"
+                        x-on:click="$store.wishlist.toggle('silla-alta')"
+                        x-bind:aria-pressed="$store.wishlist.has('silla-alta')"
+                        x-bind:aria-label="$store.wishlist.has('silla-alta')
+                          ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                       class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                       aria-label="Guardar en favoritos"
                       aria-pressed="false"
@@ -852,12 +937,21 @@
                       <span
                         class="flex size-9 items-center justify-center rounded-full bg-cream
                           transition-colors duration-150 group-hover/heart:bg-sand
-                          text-charcoal"
+                          "
+                          x-bind:class="$store.wishlist.has('silla-alta') ? 'text-clay' : 'text-charcoal'"
                       >
-                        <svg
-                          class="icon-stroke size-5 shrink-0 fill-none"
-                          aria-hidden="true"
-                        ><use href="#icon-heart"></use></svg>
+                          <span x-show="!$store.wishlist.has('silla-alta')">
+                            <svg
+                              class="icon-stroke size-5 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-heart"></use></svg>
+                          </span>
+                          <span x-show="$store.wishlist.has('silla-alta')" x-cloak>
+                            <svg
+                              class="icon-stroke size-5 shrink-0 fill-current"
+                              aria-hidden="true"
+                            ><use href="#icon-heart"></use></svg>
+                          </span>
                       </span>
                     </button>
                   </div>
@@ -880,6 +974,7 @@
                             
                             text-body
                             "
+                          
                         >$ 154.850</span>
                     
                       </p>
@@ -896,30 +991,26 @@
                 </div>
                 
                   <div class="relative z-10 mt-auto">
-                          <button
-                            type="button"
+                
+                            <a href="/sillas/silla-alta/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                          transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                          
+                          min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                          
+                          
+                          w-full
+                            bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
                             
                             
                             
-                            class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                        transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                        
-                        min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                        
-                        
-                        w-full
-                          bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                          
-                          
-                          
-                        "
-                          >
-                              <span class="inline-flex items-center gap-2 ">
+                          " >
+                              <span class="inline-flex items-center gap-2">
                                 
-                                Agregar
+                                <span 
+                                  >Elegir color</span>
                                 
                               </span>
-                          </button>
+                            </a>
                   </div>
                 </article>
               </div>
@@ -963,6 +1054,10 @@
                 
                     <button
                       type="button"
+                        x-on:click="$store.wishlist.toggle('silla-alta-dos-escalones')"
+                        x-bind:aria-pressed="$store.wishlist.has('silla-alta-dos-escalones')"
+                        x-bind:aria-label="$store.wishlist.has('silla-alta-dos-escalones')
+                          ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                       class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                       aria-label="Guardar en favoritos"
                       aria-pressed="false"
@@ -970,12 +1065,21 @@
                       <span
                         class="flex size-9 items-center justify-center rounded-full bg-cream
                           transition-colors duration-150 group-hover/heart:bg-sand
-                          text-charcoal"
+                          "
+                          x-bind:class="$store.wishlist.has('silla-alta-dos-escalones') ? 'text-clay' : 'text-charcoal'"
                       >
-                        <svg
-                          class="icon-stroke size-5 shrink-0 fill-none"
-                          aria-hidden="true"
-                        ><use href="#icon-heart"></use></svg>
+                          <span x-show="!$store.wishlist.has('silla-alta-dos-escalones')">
+                            <svg
+                              class="icon-stroke size-5 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-heart"></use></svg>
+                          </span>
+                          <span x-show="$store.wishlist.has('silla-alta-dos-escalones')" x-cloak>
+                            <svg
+                              class="icon-stroke size-5 shrink-0 fill-current"
+                              aria-hidden="true"
+                            ><use href="#icon-heart"></use></svg>
+                          </span>
                       </span>
                     </button>
                   </div>
@@ -996,6 +1100,7 @@
                             
                             text-body
                             "
+                          
                         >$ 199.850</span>
                     
                       </p>
@@ -1012,30 +1117,61 @@
                 </div>
                 
                   <div class="relative z-10 mt-auto">
-                          <button
-                            type="button"
-                            
-                            
-                            
-                            class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                        transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                        
-                        min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                        
-                        
-                        w-full
-                          bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                          
-                          
-                          
-                        "
-                          >
-                              <span class="inline-flex items-center gap-2 ">
+                
+                          <span x-show="!$store.cart.has('silla-alta-dos-escalones', '')">
+                              <button
+                                type="button"
+                                x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                 
-                                Agregar
                                 
-                              </span>
-                          </button>
+                                
+                                
+                                class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                            transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                            
+                            min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                            
+                            
+                            w-full
+                              bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                              
+                              
+                              
+                            "
+                              >
+                                  <span class="inline-flex items-center gap-2 ">
+                                    
+                                    <span 
+                                      >Agregar</span>
+                                    
+                                  </span>
+                              </button>
+                          </span>
+                          <span x-show="$store.cart.has('silla-alta-dos-escalones', '')" x-cloak>
+                              <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                            transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                            
+                            min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                            
+                            
+                            w-full
+                              
+                              border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                              
+                              
+                            " >
+                                <span class="inline-flex items-center gap-2">
+                                  <svg
+                              class="icon-stroke size-5 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                            
+                                  <span 
+                                    >En el carrito</span>
+                                  
+                                </span>
+                              </a>
+                          </span>
                   </div>
                 </article>
               </div>
@@ -1079,6 +1215,10 @@
                 
                     <button
                       type="button"
+                        x-on:click="$store.wishlist.toggle('silla-para-bebe')"
+                        x-bind:aria-pressed="$store.wishlist.has('silla-para-bebe')"
+                        x-bind:aria-label="$store.wishlist.has('silla-para-bebe')
+                          ? 'Quitar de favoritos' : 'Guardar en favoritos'"
                       class="group/heart absolute top-1 right-1 z-10 flex size-11 items-center justify-center"
                       aria-label="Guardar en favoritos"
                       aria-pressed="false"
@@ -1086,12 +1226,21 @@
                       <span
                         class="flex size-9 items-center justify-center rounded-full bg-cream
                           transition-colors duration-150 group-hover/heart:bg-sand
-                          text-charcoal"
+                          "
+                          x-bind:class="$store.wishlist.has('silla-para-bebe') ? 'text-clay' : 'text-charcoal'"
                       >
-                        <svg
-                          class="icon-stroke size-5 shrink-0 fill-none"
-                          aria-hidden="true"
-                        ><use href="#icon-heart"></use></svg>
+                          <span x-show="!$store.wishlist.has('silla-para-bebe')">
+                            <svg
+                              class="icon-stroke size-5 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-heart"></use></svg>
+                          </span>
+                          <span x-show="$store.wishlist.has('silla-para-bebe')" x-cloak>
+                            <svg
+                              class="icon-stroke size-5 shrink-0 fill-current"
+                              aria-hidden="true"
+                            ><use href="#icon-heart"></use></svg>
+                          </span>
                       </span>
                     </button>
                   </div>
@@ -1112,6 +1261,7 @@
                             
                             text-body
                             "
+                          
                         >$ 129.000</span>
                     
                       </p>
@@ -1128,30 +1278,61 @@
                 </div>
                 
                   <div class="relative z-10 mt-auto">
-                          <button
-                            type="button"
-                            
-                            
-                            
-                            class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
-                        transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
-                        
-                        min-h-12 min-w-24 px-6 text-body lg:min-h-11
-                        
-                        
-                        w-full
-                          bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
-                          
-                          
-                          
-                        "
-                          >
-                              <span class="inline-flex items-center gap-2 ">
+                
+                          <span x-show="!$store.cart.has('silla-para-bebe', '')">
+                              <button
+                                type="button"
+                                x-on:click="$store.cart.add(&#x27;{{id}}&#x27;, &#x27;&#x27;, 1); $store.overlay.open(&#x27;cart&#x27;)"
                                 
-                                Agregar
                                 
-                              </span>
-                          </button>
+                                
+                                
+                                class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                            transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                            
+                            min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                            
+                            
+                            w-full
+                              bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                              
+                              
+                              
+                            "
+                              >
+                                  <span class="inline-flex items-center gap-2 ">
+                                    
+                                    <span 
+                                      >Agregar</span>
+                                    
+                                  </span>
+                              </button>
+                          </span>
+                          <span x-show="$store.cart.has('silla-para-bebe', '')" x-cloak>
+                              <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                            transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                            
+                            min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                            
+                            
+                            w-full
+                              
+                              border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                              
+                              
+                            " >
+                                <span class="inline-flex items-center gap-2">
+                                  <svg
+                              class="icon-stroke size-5 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                            
+                                  <span 
+                                    >En el carrito</span>
+                                  
+                                </span>
+                              </a>
+                          </span>
                   </div>
                 </article>
               </div>
@@ -1163,6 +1344,8 @@
                 <button
                   type="button"
                   x-on:click="$store.catalog.clear()"
+                  
+                  
                   
                   
                   class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
@@ -1180,7 +1363,8 @@
                 >
                     <span class="inline-flex items-center gap-2 ">
                       
-                      Quitar filtros
+                      <span 
+                        >Quitar filtros</span>
                       
                     </span>
                 </button>
@@ -1254,64 +1438,120 @@
                 <fieldset>
                   <legend class="text-small font-medium">Color de madera</legend>
                   <div class="mt-2 flex flex-col">
-                      <label class="flex min-h-12 cursor-pointer items-center gap-3">
-                        <input
-                          type="checkbox"
-                          value="roble"
-                          x-model="$store.catalog.draftColors"
-                          class="size-6 shrink-0 appearance-none rounded-sm border border-border
-                            bg-sand checked:border-clay checked:bg-clay lg:size-5"
-                        />
-                        <span
-                          class="size-5 shrink-0 rounded-full border border-border"
-                          style="background-color: #C69C6D"
-                          aria-hidden="true"
-                        ></span>
+                      <label class="flex min-h-11 items-start gap-3
+                        cursor-pointer">
+                        <span class="relative mt-1 flex size-6 shrink-0 items-center justify-center lg:size-5">
+                          <input
+                            type="checkbox"
+                            
+                            value="roble"
+                            x-model="$store.catalog.draftColors"
+                            
+                            
+                            
+                            class="peer size-full appearance-none rounded-sm border border-border bg-sand
+                              checked:border-clay checked:bg-clay disabled:cursor-default"
+                          />
+                          <span class="pointer-events-none absolute text-cream opacity-0 peer-checked:opacity-100">
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                          </span>
+                        </span>
+                          <span
+                            class="mt-0.5 size-5 shrink-0 rounded-full border border-border"
+                            style="background-color: #C69C6D"
+                            aria-hidden="true"
+                          ></span>
+                      
                         <span class="text-body">Roble americano</span>
                       </label>
-                      <label class="flex min-h-12 cursor-pointer items-center gap-3">
-                        <input
-                          type="checkbox"
-                          value="nogal"
-                          x-model="$store.catalog.draftColors"
-                          class="size-6 shrink-0 appearance-none rounded-sm border border-border
-                            bg-sand checked:border-clay checked:bg-clay lg:size-5"
-                        />
-                        <span
-                          class="size-5 shrink-0 rounded-full border border-border"
-                          style="background-color: #5E3D28"
-                          aria-hidden="true"
-                        ></span>
+                      <label class="flex min-h-11 items-start gap-3
+                        cursor-pointer">
+                        <span class="relative mt-1 flex size-6 shrink-0 items-center justify-center lg:size-5">
+                          <input
+                            type="checkbox"
+                            
+                            value="nogal"
+                            x-model="$store.catalog.draftColors"
+                            
+                            
+                            
+                            class="peer size-full appearance-none rounded-sm border border-border bg-sand
+                              checked:border-clay checked:bg-clay disabled:cursor-default"
+                          />
+                          <span class="pointer-events-none absolute text-cream opacity-0 peer-checked:opacity-100">
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                          </span>
+                        </span>
+                          <span
+                            class="mt-0.5 size-5 shrink-0 rounded-full border border-border"
+                            style="background-color: #5E3D28"
+                            aria-hidden="true"
+                          ></span>
+                      
                         <span class="text-body">Nogal</span>
                       </label>
-                      <label class="flex min-h-12 cursor-pointer items-center gap-3">
-                        <input
-                          type="checkbox"
-                          value="blanco"
-                          x-model="$store.catalog.draftColors"
-                          class="size-6 shrink-0 appearance-none rounded-sm border border-border
-                            bg-sand checked:border-clay checked:bg-clay lg:size-5"
-                        />
-                        <span
-                          class="size-5 shrink-0 rounded-full border border-border"
-                          style="background-color: #F2EFE9"
-                          aria-hidden="true"
-                        ></span>
+                      <label class="flex min-h-11 items-start gap-3
+                        cursor-pointer">
+                        <span class="relative mt-1 flex size-6 shrink-0 items-center justify-center lg:size-5">
+                          <input
+                            type="checkbox"
+                            
+                            value="blanco"
+                            x-model="$store.catalog.draftColors"
+                            
+                            
+                            
+                            class="peer size-full appearance-none rounded-sm border border-border bg-sand
+                              checked:border-clay checked:bg-clay disabled:cursor-default"
+                          />
+                          <span class="pointer-events-none absolute text-cream opacity-0 peer-checked:opacity-100">
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                          </span>
+                        </span>
+                          <span
+                            class="mt-0.5 size-5 shrink-0 rounded-full border border-border"
+                            style="background-color: #F2EFE9"
+                            aria-hidden="true"
+                          ></span>
+                      
                         <span class="text-body">Blanco</span>
                       </label>
-                      <label class="flex min-h-12 cursor-pointer items-center gap-3">
-                        <input
-                          type="checkbox"
-                          value="crudo"
-                          x-model="$store.catalog.draftColors"
-                          class="size-6 shrink-0 appearance-none rounded-sm border border-border
-                            bg-sand checked:border-clay checked:bg-clay lg:size-5"
-                        />
-                        <span
-                          class="size-5 shrink-0 rounded-full border border-border"
-                          style="background-color: #DCC9A8"
-                          aria-hidden="true"
-                        ></span>
+                      <label class="flex min-h-11 items-start gap-3
+                        cursor-pointer">
+                        <span class="relative mt-1 flex size-6 shrink-0 items-center justify-center lg:size-5">
+                          <input
+                            type="checkbox"
+                            
+                            value="crudo"
+                            x-model="$store.catalog.draftColors"
+                            
+                            
+                            
+                            class="peer size-full appearance-none rounded-sm border border-border bg-sand
+                              checked:border-clay checked:bg-clay disabled:cursor-default"
+                          />
+                          <span class="pointer-events-none absolute text-cream opacity-0 peer-checked:opacity-100">
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-check"></use></svg>
+                          </span>
+                        </span>
+                          <span
+                            class="mt-0.5 size-5 shrink-0 rounded-full border border-border"
+                            style="background-color: #DCC9A8"
+                            aria-hidden="true"
+                          ></span>
+                      
                         <span class="text-body">Crudo</span>
                       </label>
                   </div>
@@ -1320,14 +1560,33 @@
             </div>
       
             <div class="page-container pb-safe shrink-0 border-t border-line py-3">
-              <button
-                type="button"
-                x-on:click="$store.overlay.close(() => $store.catalog.commitDraft())"
-                class="relative inline-flex min-h-12 w-full items-center justify-center rounded-lg
-                  bg-clay px-6 text-center text-body font-medium text-cream transition-colors
-                  duration-150 hover:bg-clay-hover active:bg-clay-active lg:min-h-11"
-                x-text="$store.catalog.applyLabel"
-              >Ver resultados</button>
+                <button
+                  type="button"
+                  x-on:click="$store.overlay.close(() &#x3D;&gt; $store.catalog.commitDraft())"
+                  
+                  
+                  
+                  
+                  class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+              transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+              
+              min-h-12 min-w-24 px-6 text-body lg:min-h-11
+              
+              
+              w-full
+                bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                
+                
+                
+              "
+                >
+                    <span class="inline-flex items-center gap-2 ">
+                      
+                      <span x-text="$store.catalog.applyLabel"
+                        >Ver resultados</span>
+                      
+                    </span>
+                </button>
             </div>
           </div>
         </div>
@@ -1672,7 +1931,42 @@
             </span>
           </div>
         
-          <template x-if="ready && !lines.length">
+          <template x-if="failed">
+            <div class="page-container py-10 text-center">
+              <p class="max-w-prose text-lead">No pudimos cargar esta sección. Revisá tu conexión y probá de nuevo.</p>
+              <div class="mt-4 flex justify-center">
+                  <button
+                    type="button"
+                    x-on:click="load()"
+                    
+                    
+                    
+                    
+                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                
+                min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                
+                
+                
+                  
+                  border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                  
+                  
+                "
+                  >
+                      <span class="inline-flex items-center gap-2 ">
+                        
+                        <span 
+                          >Reintentar</span>
+                        
+                      </span>
+                  </button>
+              </div>
+            </div>
+          </template>
+        
+          <template x-if="ready && !failed && !lines.length">
             <div class="page-container py-10 text-center">
               <p class="text-lead">Tu carrito está vacío.</p>
               <div class="mt-4 flex justify-center">
@@ -1690,7 +1984,8 @@
                 " >
                     <span class="inline-flex items-center gap-2">
                       
-                      Ver sillas
+                      <span 
+                        >Ver sillas</span>
                       
                     </span>
                   </a>
@@ -1698,7 +1993,7 @@
             </div>
           </template>
         
-          <template x-if="ready && lines.length">
+          <template x-if="ready && !failed && lines.length">
             <div
               class="flex min-h-0 flex-1 flex-col
                 "
@@ -1762,44 +2057,68 @@
                       <p x-show="!line.inStock" class="text-small text-warning">Quedó sin stock</p>
                   
                       <div class="mt-1 flex flex-wrap items-center justify-between gap-2">
-                        <div class="flex items-center rounded-md border border-border bg-sand">
-                          <button
-                            type="button"
-                            x-on:click="step(line, -1)"
-                            x-bind:disabled="line.qty <= 1"
-                            class="flex size-10 items-center justify-center rounded-l-md text-charcoal
-                              hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45"
-                          >
-                            <span class="sr-only">Restar uno</span>
-                            <svg
-                              class="icon-stroke size-4 shrink-0 fill-none"
-                              aria-hidden="true"
-                            ><use href="#icon-minus"></use></svg>
-                          </button>
-                  
-                          <span class="min-w-8 text-center text-body" x-text="line.qty"></span>
-                  
-                          <button
-                            type="button"
-                            x-on:click="step(line, 1)"
-                            x-bind:disabled="line.atMax"
-                            class="flex size-10 items-center justify-center rounded-r-md text-charcoal
-                              hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45"
-                          >
-                            <span class="sr-only">Sumar uno</span>
-                            <svg
-                              class="icon-stroke size-4 shrink-0 fill-none"
-                              aria-hidden="true"
-                            ><use href="#icon-plus"></use></svg>
-                          </button>
+                        <div class="flex flex-col gap-2"
+                          
+                        >
+                          <label for="qty-linea" class="sr-only"
+                            >Cantidad</label>
+                        
+                          <div class="flex w-fit items-center rounded-md border border-border bg-sand">
+                            <button
+                              type="button"
+                              class="flex size-12 items-center justify-center rounded-l-md text-charcoal
+                                hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45 lg:size-11"
+                              aria-label="Restar uno"
+                              :disabled="line.qty &lt;&#x3D; 1"
+                              @click="step(line, -1)"
+                            >
+                              <svg
+                                class="icon-stroke size-5 shrink-0 fill-none"
+                                aria-hidden="true"
+                              ><use href="#icon-minus"></use></svg>
+                            </button>
+                        
+                              <span
+                                class="flex h-12 w-12 items-center justify-center border-x border-border bg-sand
+                                  text-center text-body tabular-nums lg:h-11"
+                                x-text="line.qty"
+                              ></span>
+                        
+                            <button
+                              type="button"
+                              class="flex size-12 items-center justify-center rounded-r-md text-charcoal
+                                hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45 lg:size-11"
+                              aria-label="Sumar uno"
+                              :disabled="line.atMax"
+                              @click="step(line, 1)"
+                            >
+                              <svg
+                                class="icon-stroke size-5 shrink-0 fill-none"
+                                aria-hidden="true"
+                              ><use href="#icon-plus"></use></svg>
+                            </button>
+                          </div>
+                        
+                          <p id="qty-linea-message" class="min-h-6 text-small text-charcoal/70">
+                            <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
+                          </p>
                         </div>
                   
-                        <p class="text-body font-medium" x-text="fmt(line.sum)"></p>
+                        <div class="flex flex-col gap-1 ">
+                          <p class="flex flex-wrap items-baseline gap-2">
+                        
+                            <span
+                              class="font-semibold tabular-nums
+                                
+                                text-body
+                                "
+                              x-text="fmt(line.sum)"
+                            >$ 0</span>
+                        
+                          </p>
+                        
+                        </div>
                       </div>
-                  
-                      <p x-show="line.atMax" class="text-caption text-charcoal/70">
-                        Máximo 10 por pedido
-                      </p>
                     </div>
                   </li>
                 </template>
@@ -1812,7 +2131,20 @@
                 <div class="flex flex-col gap-2">
                   <div class="flex items-baseline justify-between gap-4">
                     <span class="text-small text-charcoal/70">Subtotal</span>
-                    <span class="text-body" x-text="fmt(subtotal)"></span>
+                    <div class="flex flex-col gap-1 ">
+                      <p class="flex flex-wrap items-baseline gap-2">
+                    
+                        <span
+                          class="font-semibold tabular-nums
+                            
+                            text-body
+                            "
+                          x-text="fmt(subtotal)"
+                        >$ 0</span>
+                    
+                      </p>
+                    
+                    </div>
                   </div>
                 
                   <div class="flex items-baseline justify-between gap-4">
@@ -1822,7 +2154,20 @@
                 
                   <div class="mt-1 flex items-baseline justify-between gap-4 border-t border-line pt-3">
                     <span class="text-body font-medium">Total</span>
-                    <span class="font-display text-h4 lg:text-h4-lg" x-text="fmt(subtotal)"></span>
+                    <div class="flex flex-col gap-1 ">
+                      <p class="flex flex-wrap items-baseline gap-2">
+                    
+                        <span
+                          class="font-semibold tabular-nums
+                            
+                            
+                            text-h4 lg:text-h4-lg"
+                          x-text="fmt(subtotal)"
+                        >$ 0</span>
+                    
+                      </p>
+                    
+                    </div>
                   </div>
                 </div>
         
@@ -1841,7 +2186,8 @@
                   " >
                       <span class="inline-flex items-center gap-2">
                         
-                        Finalizar compra
+                        <span 
+                          >Finalizar compra</span>
                         
                       </span>
                     </a>
@@ -1859,7 +2205,8 @@
                     " >
                         <span class="inline-flex items-center gap-2">
                           
-                          Ver carrito
+                          <span 
+                            >Ver carrito</span>
                           
                         </span>
                       </a>
@@ -2259,6 +2606,8 @@
                   x-on:click="load()"
                   
                   
+                  
+                  
                   class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
               transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
               
@@ -2274,7 +2623,8 @@
                 >
                     <span class="inline-flex items-center gap-2 ">
                       
-                      Reintentar
+                      <span 
+                        >Reintentar</span>
                       
                     </span>
                 </button>
@@ -2303,7 +2653,8 @@
               " >
                   <span class="inline-flex items-center gap-2">
                     
-                    Ver catálogo
+                    <span 
+                      >Ver catálogo</span>
                     
                   </span>
                 </a>
@@ -2349,16 +2700,23 @@
                             class="search-hit line-clamp-2 min-w-0 flex-1 text-body"
                           ></span>
                           <span class="flex shrink-0 items-baseline gap-2">
-                            <span
-                              x-text="option.price"
-                              x-bind:class="option.inStock ? 'font-semibold' : 'text-charcoal/70'"
-                              class="text-body tabular-nums"
-                            ></span>
-                            <s
-                              x-show="option.oldPrice"
-                              x-text="option.oldPrice"
-                              class="text-small text-charcoal/70 tabular-nums"
-                            ></s>
+                            <div class="flex flex-col gap-1 ">
+                              <p class="flex flex-wrap items-baseline gap-2">
+                            
+                                <span
+                                  class="font-semibold tabular-nums
+                                    
+                                    text-body
+                                    "
+                                  x-text="option.price"
+                                >$ 0</span>
+                            
+                                  <s class="text-small tabular-nums text-charcoal/70"
+                                    x-text="option.oldPrice" x-show="option.oldPrice" x-cloak
+                                    ></s>
+                              </p>
+                            
+                            </div>
                           </span>
                         </a>
                       </li>
