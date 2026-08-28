@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Замер страницы товара</title>
+    <style>
+      body { font: 16px/1.5 -apple-system, system-ui, sans-serif; margin: 16px; }
+      h1 { font-size: 18px; }
+      td { padding: 4px 8px 4px 0; vertical-align: top; }
+      td:last-child { font-weight: 700; text-align: right; }
+      .bad { color: #a03d2e; }
+      iframe { position: absolute; left: -9999px; width: 390px; height: 700px; border: 0; }
+    </style>
+  </head>
+  <body>
+    <h1>Замер страницы товара</h1>
+    <p id="state">Меряю… подождите 5 секунд.</p>
+    <table id="out"></table>
+    <iframe id="frame" src="/sillas/silla-evolutiva/?diag=1"></iframe>
+
+    <script>
+      const rows = []
+      const add = (name, value, bad) => rows.push([name, value, bad])
+
+      function height(doc, selector) {
+        const node = doc.querySelector(selector)
+        return node ? Math.round(node.getBoundingClientRect().height) : -1
+      }
+
+      function run() {
+        const frame = document.getElementById('frame')
+        const doc = frame.contentDocument
+        const win = frame.contentWindow
+
+        add('ширина окна', win.innerWidth + ' px')
+        add('вся страница', doc.documentElement.scrollHeight + ' px',
+          doc.documentElement.scrollHeight > 9000)
+        add('ширина страницы', doc.documentElement.scrollWidth + ' px',
+          doc.documentElement.scrollWidth > win.innerWidth + 1)
+
+        add('блок галереи', height(doc, '[data-gallery]') + ' px',
+          height(doc, '[data-gallery]') > 900)
+        add('лента фото', height(doc, '[data-gallery-main]') + ' px')
+        add('ряд превью', height(doc, '[data-gallery-thumbs]') + ' px',
+          height(doc, '[data-gallery-thumbs]') > 300)
+
+        const main = doc.querySelector('[data-gallery-main]')
+        add('листалка ожила', main && main.swiper ? 'да' : 'НЕТ', !(main && main.swiper))
+        add('стили листалки', main && getComputedStyle(main).overflow === 'hidden'
+          ? 'есть' : 'НЕТ', !(main && getComputedStyle(main).overflow === 'hidden'))
+        add('раскладка ряда', main
+          ? getComputedStyle(main.querySelector('.swiper-wrapper')).display : '—',
+          main && getComputedStyle(main.querySelector('.swiper-wrapper')).display !== 'flex')
+
+        const imgs = [...doc.querySelectorAll('img')]
+        add('картинок на странице', imgs.length)
+        add('не отрисовались', imgs.filter((i) => i.complete && i.naturalWidth === 0).length,
+          imgs.some((i) => i.complete && i.naturalWidth === 0))
+
+        // Самые высокие блоки страницы: если раздулось что-то неожиданное, оно всплывёт тут
+        const tall = [...doc.querySelectorAll('main *')]
+          .map((node) => [node, Math.round(node.getBoundingClientRect().height)])
+          .filter(([node, h]) => h > 800 && node.children.length < 12)
+          .slice(0, 4)
+        for (const [node, h] of tall) {
+          const name = node.tagName.toLowerCase() +
+            (node.className && typeof node.className === 'string'
+              ? '.' + node.className.split(' ').slice(0, 2).join('.')
+              : '')
+          add('высокий: ' + name, h + ' px', true)
+        }
+
+        document.getElementById('state').textContent = 'Готово. Пришлите снимок этого экрана.'
+        document.getElementById('out').innerHTML = rows
+          .map(([name, value, bad]) =>
+            `<tr class="${bad ? 'bad' : ''}"><td>${name}</td><td>${value}</td></tr>`)
+          .join('')
+      }
+
+      document.getElementById('frame').addEventListener('load', () => setTimeout(run, 4000))
+    </script>
+  </body>
+</html>
