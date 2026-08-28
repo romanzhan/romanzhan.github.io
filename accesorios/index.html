@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-CG4XaX-f.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-Bc08-0Ma.css">
+    <script type="module" crossorigin src="/assets/main-CGQvItuQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BtJux7OY.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data>
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -33,10 +33,6 @@
 
   <path d="M5 12h14" />
   <path d="m12 5 7 7-7 7" /></symbol>
-  <symbol id="icon-arrow-up-right" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.34.0 - ISC -->
-
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" /></symbol>
   <symbol id="icon-baby" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.34.0 - ISC -->
 
   <path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5" />
@@ -103,9 +99,6 @@
   <path d="M12 2v20" />
   <path d="m8 18 4 4 4-4" />
   <path d="m8 6 4-4 4 4" /></symbol>
-  <symbol id="icon-play" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.34.0 - ISC -->
-
-  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" /></symbol>
   <symbol id="icon-plus" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.34.0 - ISC -->
 
   <path d="M5 12h14" />
@@ -679,7 +672,7 @@
                             text-body
                             "
                           
-                        >$ 199.900</span>
+                        >$ 199.900</span>
                     
                       </p>
                     
@@ -840,7 +833,7 @@
                             text-body
                             "
                           
-                        >$ 164.850</span>
+                        >$ 164.850</span>
                     
                       </p>
                     
@@ -1001,7 +994,7 @@
                             text-body
                             "
                           
-                        >$ 79.950</span>
+                        >$ 79.950</span>
                     
                       </p>
                     
@@ -1162,7 +1155,7 @@
                             text-body
                             "
                           
-                        >$ 59.900</span>
+                        >$ 59.900</span>
                     
                       </p>
                     
@@ -1323,7 +1316,7 @@
                             text-body
                             "
                           
-                        >$ 20.000</span>
+                        >$ 20.000</span>
                     
                       </p>
                     
@@ -1400,7 +1393,13 @@
           </div>
         
           <div class="mt-10 text-center" data-catalog-empty hidden>
-            <p class="text-lead">No hay productos con estos filtros.</p>
+            <span class="inline-flex text-charcoal/45">
+              <svg
+                class="icon-stroke size-10 shrink-0 fill-none"
+                aria-hidden="true"
+              ><use href="#icon-sliders-horizontal"></use></svg>
+            </span>
+            <p class="mt-3 text-lead">No hay productos con estos filtros.</p>
             <div class="mt-4 flex justify-center">
                 <button
                   type="button"
@@ -1785,7 +1784,12 @@
           </button>
         </div>
     
-        <div class="flex min-h-0 flex-1 flex-col" x-data="cartView(10)">
+        <div
+          class="flex min-h-0 flex-1 flex-col"
+          x-data="cartView(10)"
+          data-t-removed="Eliminado del carrito"
+          data-t-undo="Deshacer"
+        >
           <div x-show="!ready" class="page-container py-10 text-center">
             <span class="inline-flex text-charcoal/70">
               <svg
@@ -1832,7 +1836,13 @@
         
           <template x-if="ready && !failed && !lines.length">
             <div class="page-container py-10 text-center">
-              <p class="text-lead">Tu carrito está vacío.</p>
+              <span class="inline-flex text-charcoal/45">
+                <svg
+                  class="icon-stroke size-10 shrink-0 fill-none"
+                  aria-hidden="true"
+                ><use href="#icon-shopping-bag"></use></svg>
+              </span>
+              <p class="mt-3 text-lead">Tu carrito está vacío.</p>
               <div class="mt-4 flex justify-center">
                   <a href="/sillas/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
                 transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
@@ -1976,7 +1986,7 @@
                                 text-body
                                 "
                               x-text="fmt(line.sum)"
-                            >$ 0</span>
+                            >$ 0</span>
                         
                           </p>
                         
@@ -2003,7 +2013,7 @@
                             text-body
                             "
                           x-text="fmt(subtotal)"
-                        >$ 0</span>
+                        >$ 0</span>
                     
                       </p>
                     
@@ -2026,7 +2036,7 @@
                             
                             text-h4 lg:text-h4-lg"
                           x-text="fmt(subtotal)"
-                        >$ 0</span>
+                        >$ 0</span>
                     
                       </p>
                     
@@ -2078,27 +2088,34 @@
             </div>
           </template>
         
-          <div
-            x-show="undo"
-            x-cloak
-            x-transition.opacity.duration.200ms
-            role="status"
-            class="bottom-safe fixed inset-x-0 z-50 flex justify-center px-4"
-          >
-            <div
-              class="surface-dark flex max-w-full items-center gap-4 rounded-lg bg-charcoal px-4 py-3
-                text-cream shadow-lg"
-            >
-              <span class="min-w-0 truncate text-small">Eliminado del carrito</span>
-              <button
-                type="button"
-                x-on:click="restore()"
-                class="shrink-0 text-small font-medium underline underline-offset-2
-                  hover:text-cream/75"
-              >Deshacer</button>
-            </div>
-          </div>
         </div>
+      </div>
+    </div>
+    <div
+      x-data
+      x-show="$store.toast.visible"
+      x-cloak
+      x-transition.opacity.duration.200ms
+      x-on:mouseenter="$store.toast.hold()"
+      x-on:mouseleave="$store.toast.resume()"
+      role="status"
+      aria-live="polite"
+      class="bottom-safe fixed inset-x-0 z-50 flex justify-center px-4
+        lg:inset-x-auto lg:top-4 lg:right-4 lg:bottom-auto lg:justify-end"
+    >
+      <div
+        class="surface-dark flex max-w-full items-center gap-4 rounded-lg bg-charcoal px-4 py-3
+          text-cream shadow-lg"
+      >
+        <span class="min-w-0 text-small" x-text="$store.toast.text"></span>
+        <button
+          type="button"
+          x-show="$store.toast.actionLabel"
+          x-on:click="$store.toast.run()"
+          x-text="$store.toast.actionLabel"
+          class="shrink-0 text-small font-medium underline underline-offset-2
+            hover:text-cream/75"
+        ></button>
       </div>
     </div>
     <a
@@ -2572,7 +2589,7 @@
                                     text-body
                                     "
                                   x-text="option.price"
-                                >$ 0</span>
+                                >$ 0</span>
                             
                                   <s class="text-small tabular-nums text-charcoal/70"
                                     x-text="option.oldPrice" x-show="option.oldPrice" x-cloak
