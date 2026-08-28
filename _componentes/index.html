@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-Bjvein_W.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-qytnPI39.css">
+    <script type="module" crossorigin src="/assets/main-DwJe1R9l.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-CJLjWT4U.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data data-cart-max="10">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -3844,7 +3844,7 @@
           </p>
           <div class="mt-2 grid gap-6 md:grid-cols-3">
             <figure
-              x-data="{ open: false }"
+              x-data="reviewCard"
               class="flex h-full flex-col gap-3 rounded-xl border border-line bg-cream p-6"
             >
               <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
@@ -3905,19 +3905,22 @@
                 <span class="text-small tabular-nums ">5</span>
               </div>
             
-              <blockquote class="flex-1">
-                <p class="line-clamp-5" x-bind:style="open && '-webkit-line-clamp: unset'"
+              <blockquote>
+                <p x-ref="text" class="review-text is-clipped"
+                  x-bind:style="height && ('max-height: ' + height)"
                   >Hermosa, súper recomendable. La armamos súper rápido y me encantó el detalle del regalito. ¡Muchas gracias!</p>
               </blockquote>
             
             
+              <div class="mt-auto flex flex-col gap-3">
             
-              <figcaption class="flex flex-wrap items-center gap-x-2 text-small text-charcoal/70">
-                  <a href="https://www.mercadolibre.com.ar/silla-evolutiva-montessori-de-madera-roble-americano/up/MLAU3501801610" target="_blank" rel="noopener nofollow"
-                    class="underline underline-offset-2 hover:text-charcoal">Cliente de Mercado Libre</a>
-                <span aria-hidden="true">·</span>
-                <time datetime="2026-08-25">25/08/2026</time>
-              </figcaption>
+                <figcaption class="flex flex-wrap items-center gap-x-2 text-small text-charcoal/70">
+                    <a href="https://www.mercadolibre.com.ar/silla-evolutiva-montessori-de-madera-roble-americano/up/MLAU3501801610" target="_blank" rel="noopener nofollow"
+                      class="underline underline-offset-2 hover:text-charcoal">Cliente de Mercado Libre</a>
+                  <span aria-hidden="true">·</span>
+                  <time datetime="2026-08-25">25/08/2026</time>
+                </figcaption>
+              </div>
             </figure>
             <article class="group flex h-full flex-col gap-3">
               <a href="/blog/como-elegir-la-silla-segun-la-edad/" class="overflow-hidden rounded-xl">
@@ -3941,14 +3944,14 @@
     
           <p class="mt-8 text-caption text-charcoal/70">Аккордеон: закрыт и раскрывается нажатием</p>
           <div class="mt-2 max-w-prose">
-            <div x-data="{ open: false }" class="border-b border-line">
+            <div x-data="{ open: false }" class="border-b border-line/60">
               <h3>
                 <button
                   type="button"
                   x-on:click="open = !open"
                   x-bind:aria-expanded="open"
                   aria-controls="faq-vitrina-1"
-                  class="flex min-h-14 w-full items-center justify-between gap-4 rounded-lg
+                  class="flex min-h-16 w-full items-center justify-between gap-4 rounded-lg py-2
                     text-left text-lead hover:bg-sand-hover"
                 >
                   ¿Cuánto cuesta el envío?
@@ -3969,18 +3972,18 @@
                 x-bind:inert="!open"
               >
                 <div>
-                  <p class="max-w-prose pb-4 text-charcoal/70">El envío es gratis a todo el país, en todas las sillas y accesorios, sin mínimo de compra.</p>
+                  <p class="max-w-prose pb-6 text-charcoal/70">El envío es gratis a todo el país, en todas las sillas y accesorios, sin mínimo de compra.</p>
                 </div>
               </div>
             </div>
-            <div x-data="{ open: false }" class="border-b border-line">
+            <div x-data="{ open: false }" class="border-b border-line/60">
               <h3>
                 <button
                   type="button"
                   x-on:click="open = !open"
                   x-bind:aria-expanded="open"
                   aria-controls="faq-vitrina-2"
-                  class="flex min-h-14 w-full items-center justify-between gap-4 rounded-lg
+                  class="flex min-h-16 w-full items-center justify-between gap-4 rounded-lg py-2
                     text-left text-lead hover:bg-sand-hover"
                 >
                   ¿La silla viene armada?
@@ -4001,7 +4004,7 @@
                 x-bind:inert="!open"
               >
                 <div>
-                  <p class="max-w-prose pb-4 text-charcoal/70">Se entrega desarmada, con todos los herrajes y las instrucciones. El armado es sencillo y no lleva más de unos minutos. Si preferís recibirla armada, podés retirarla en nuestro domicilio de Villa Crespo, CABA: escribinos por WhatsApp para coordinar.</p>
+                  <p class="max-w-prose pb-6 text-charcoal/70">Se entrega desarmada, con todos los herrajes y las instrucciones. El armado es sencillo y no lleva más de unos minutos. Si preferís recibirla armada, podés retirarla en nuestro domicilio de Villa Crespo, CABA: escribinos por WhatsApp para coordinar.</p>
                 </div>
               </div>
             </div>
@@ -6476,36 +6479,16 @@
       </main>
     <footer class="surface-dark mt-auto border-t border-cream/20 bg-walnut text-cream">
       <div class="page-container pt-8 pb-20 lg:pt-12">
-        <div class="md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-4">
-    <div x-data="footerColumn" class="border-b border-cream/20 md:border-b-0">
-      <h2>
-        <button
-          type="button"
-          x-on:click="toggle()"
-          x-bind:aria-expanded="open"
-          x-bind:tabindex="wide ? -1 : null"
-          aria-controls="footer-tienda"
-          class="-mx-3 flex h-12 w-full items-center justify-between rounded-lg px-3 text-h4
-            hover:bg-cream/20 md:pointer-events-none md:mx-0 md:h-auto md:px-0 md:pb-3
-            md:hover:bg-transparent lg:text-h4-lg"
-        >
-          Tienda
-          <span class="md:hidden" x-bind:class="open && 'rotate-180'"
-            ><svg
-      class="icon-stroke size-5 shrink-0 fill-none"
-      aria-hidden="true"
-    ><use href="#icon-chevron-down"></use></svg>
-    </span
-          >
-        </button>
-      </h2>
-      <div id="footer-tienda" class="hidden pb-4 md:block md:pb-0" x-bind:class="open && 'block!'">
+        <div class="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+    <div>
+      <h2 class="text-h4 lg:text-h4-lg">Tienda</h2>
+      <div class="mt-2">
                 <ul class="flex flex-col gap-2">
                     <li>
                       <a
                         href="/sillas/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6516,7 +6499,7 @@
                       <a
                         href="/accesorios/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6527,7 +6510,7 @@
                       <a
                         href="/como-funciona/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6538,7 +6521,7 @@
                       <a
                         href="/nosotros/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6549,7 +6532,7 @@
                       <a
                         href="/blog/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6560,35 +6543,15 @@
       </div>
     </div>
     
-    <div x-data="footerColumn" class="border-b border-cream/20 md:border-b-0">
-      <h2>
-        <button
-          type="button"
-          x-on:click="toggle()"
-          x-bind:aria-expanded="open"
-          x-bind:tabindex="wide ? -1 : null"
-          aria-controls="footer-ayuda"
-          class="-mx-3 flex h-12 w-full items-center justify-between rounded-lg px-3 text-h4
-            hover:bg-cream/20 md:pointer-events-none md:mx-0 md:h-auto md:px-0 md:pb-3
-            md:hover:bg-transparent lg:text-h4-lg"
-        >
-          Ayuda
-          <span class="md:hidden" x-bind:class="open && 'rotate-180'"
-            ><svg
-      class="icon-stroke size-5 shrink-0 fill-none"
-      aria-hidden="true"
-    ><use href="#icon-chevron-down"></use></svg>
-    </span
-          >
-        </button>
-      </h2>
-      <div id="footer-ayuda" class="hidden pb-4 md:block md:pb-0" x-bind:class="open && 'block!'">
+    <div>
+      <h2 class="text-h4 lg:text-h4-lg">Ayuda</h2>
+      <div class="mt-2">
                 <ul class="flex flex-col gap-2">
                     <li>
                       <a
                         href="/envios-y-pagos/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6599,7 +6562,7 @@
                       <a
                         href="/cambios-y-devoluciones/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6610,7 +6573,7 @@
                       <a
                         href="/preguntas-frecuentes/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6621,7 +6584,7 @@
                       <a
                         href="/contacto/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6632,35 +6595,15 @@
       </div>
     </div>
     
-    <div x-data="footerColumn" class="border-b border-cream/20 md:border-b-0">
-      <h2>
-        <button
-          type="button"
-          x-on:click="toggle()"
-          x-bind:aria-expanded="open"
-          x-bind:tabindex="wide ? -1 : null"
-          aria-controls="footer-legal"
-          class="-mx-3 flex h-12 w-full items-center justify-between rounded-lg px-3 text-h4
-            hover:bg-cream/20 md:pointer-events-none md:mx-0 md:h-auto md:px-0 md:pb-3
-            md:hover:bg-transparent lg:text-h4-lg"
-        >
-          Legal
-          <span class="md:hidden" x-bind:class="open && 'rotate-180'"
-            ><svg
-      class="icon-stroke size-5 shrink-0 fill-none"
-      aria-hidden="true"
-    ><use href="#icon-chevron-down"></use></svg>
-    </span
-          >
-        </button>
-      </h2>
-      <div id="footer-legal" class="hidden pb-4 md:block md:pb-0" x-bind:class="open && 'block!'">
+    <div>
+      <h2 class="text-h4 lg:text-h4-lg">Legal</h2>
+      <div class="mt-2">
                 <ul class="flex flex-col gap-2">
                     <li>
                       <a
                         href="/terminos/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6671,7 +6614,7 @@
                       <a
                         href="/privacidad/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6682,7 +6625,7 @@
                       <a
                         href="/boton-de-arrepentimiento/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6693,7 +6636,7 @@
                       <a
                         href="/libro-de-quejas/"
                         
-                        class="-mx-3 inline-flex h-12 items-center rounded-lg px-3 whitespace-nowrap
+                        class="-mx-3 inline-flex h-11 items-center rounded-lg px-3 whitespace-nowrap
                           hover:bg-cream/20 hover:text-cream lg:h-10
                           text-cream/75"
                         
@@ -6704,33 +6647,13 @@
       </div>
     </div>
     
-    <div x-data="footerColumn" class="border-b border-cream/20 md:border-b-0">
-      <h2>
-        <button
-          type="button"
-          x-on:click="toggle()"
-          x-bind:aria-expanded="open"
-          x-bind:tabindex="wide ? -1 : null"
-          aria-controls="footer-contacto"
-          class="-mx-3 flex h-12 w-full items-center justify-between rounded-lg px-3 text-h4
-            hover:bg-cream/20 md:pointer-events-none md:mx-0 md:h-auto md:px-0 md:pb-3
-            md:hover:bg-transparent lg:text-h4-lg"
-        >
-          Contacto
-          <span class="md:hidden" x-bind:class="open && 'rotate-180'"
-            ><svg
-      class="icon-stroke size-5 shrink-0 fill-none"
-      aria-hidden="true"
-    ><use href="#icon-chevron-down"></use></svg>
-    </span
-          >
-        </button>
-      </h2>
-      <div id="footer-contacto" class="hidden pb-4 md:block md:pb-0" x-bind:class="open && 'block!'">
+    <div>
+      <h2 class="text-h4 lg:text-h4-lg">Contacto</h2>
+      <div class="mt-2">
                 <ul class="flex flex-col gap-2 text-cream/75">
                   <li>
                     <a href="https://wa.me/5491127915729" target="_blank" rel="noopener"
-                      class="-mx-3 inline-flex min-h-12 items-center gap-2 rounded-lg px-3
+                      class="-mx-3 inline-flex min-h-11 items-center gap-2 rounded-lg px-3
                         hover:bg-cream/20 hover:text-cream lg:min-h-10"
                     >
                       <svg
@@ -6742,7 +6665,7 @@
                   </li>
                   <li>
                     <a href="mailto:madera.mas.arg@gmail.com"
-                      class="-mx-3 inline-flex min-h-12 items-center gap-2 rounded-lg px-3
+                      class="-mx-3 inline-flex min-h-11 items-center gap-2 rounded-lg px-3
                         hover:bg-cream/20 hover:text-cream lg:min-h-10"
                     >
                       <svg
@@ -6754,7 +6677,7 @@
                   </li>
                   <li>
                     <a href="https://instagram.com/madera.mas.arg" target="_blank" rel="noopener"
-                      class="-mx-3 inline-flex min-h-12 items-center gap-2 rounded-lg px-3
+                      class="-mx-3 inline-flex min-h-11 items-center gap-2 rounded-lg px-3
                         hover:bg-cream/20 hover:text-cream lg:min-h-10"
                     >
                       <svg
