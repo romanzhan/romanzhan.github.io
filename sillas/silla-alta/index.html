@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-DwJe1R9l.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CJLjWT4U.css">
+    <script type="module" crossorigin src="/assets/main-BUCNvrhP.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-xjxCC0Ia.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data data-cart-max="10">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -1215,13 +1215,15 @@
                         >Superó ampliamente nuestras expectativas. Se nota la muy buena calidad, tanto en los materiales como en la terminación: es firme, resistente y segura, algo fundamental cuando se trata de niños. El armado es súper sencillo y viene con todo lo necesario.</p>
                     </blockquote>
                   
-                      <button
-                        type="button"
-                        x-on:click="toggle()"
-                        class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
-                          hover:text-clay-hover"
-                        x-text="open ? 'Leer menos' : 'Leer más'"
-                      >Leer más</button>
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
@@ -1302,6 +1304,15 @@
                         >Excelente producto y terminaciones, muy fácil de armar y el precio bárbaro. Súper recomendable, y la atención del vendedor un 10.</p>
                     </blockquote>
                   
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
@@ -1382,6 +1393,15 @@
                         >Me encantó: se ve sólida y súper fácil de armar. Gracias por el regalito, a mi bebita le encantó.</p>
                     </blockquote>
                   
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   

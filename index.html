@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-DwJe1R9l.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CJLjWT4U.css">
+    <script type="module" crossorigin src="/assets/main-BUCNvrhP.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-xjxCC0Ia.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data data-cart-max="10">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -2316,12 +2316,12 @@
             </div>
           </section>
         <section id="como-crece" class="page-container py-12 lg:py-20">
-          <div class="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:gap-y-6">
-            <h2 class="font-display text-h2 lg:col-start-1 lg:row-start-1 lg:text-h2-lg">
+          <div class="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-x-16 lg:gap-y-6">
+            <h2 class="font-display text-h2 lg:col-start-1 lg:row-start-1 lg:self-end lg:text-h2-lg">
               Cómo se regula la Silla Evolutiva
             </h2>
         
-            <div class="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+            <div class="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
               <div class="min-w-0" data-carousel-root data-carousel-single>
                 <div class="swiper overflow-hidden rounded-2xl bg-sand">
                   <div class="swiper-wrapper">
@@ -2373,7 +2373,7 @@
               </div>
             </div>
         
-            <div class="flex flex-col items-start gap-6 lg:col-start-1 lg:row-start-2">
+            <div class="flex flex-col items-start gap-6 lg:col-start-1 lg:row-start-2 lg:self-start">
               <p class="max-w-prose text-lead text-charcoal/70">La misma silla acompaña al chico desde el primer año: el asiento y el apoyapiés cambian de lugar y la silla vuelve a quedar a la altura justa.</p>
         
               <ul class="flex w-full flex-col gap-6">
@@ -2693,6 +2693,15 @@
                         >Hermosa, súper recomendable. La armamos súper rápido y me encantó el detalle del regalito. ¡Muchas gracias!</p>
                     </blockquote>
                   
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
@@ -2773,6 +2782,15 @@
                         >¡Hermosa! Nos enviaron de regalo unos hombrecitos para hacer equilibrio. Súper contenta con la compra, la recomendaría mil veces.</p>
                     </blockquote>
                   
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
@@ -2853,13 +2871,15 @@
                         >Estamos muy contentos con el producto. Fue fácil armarla, se ve resistente y es súper linda. Busqué mucho hasta encontrar algo que pudiera pagar y realmente está muy buena. Al peque le encantó: se sube solito y está muy cómodo.</p>
                     </blockquote>
                   
-                      <button
-                        type="button"
-                        x-on:click="toggle()"
-                        class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
-                          hover:text-clay-hover"
-                        x-text="open ? 'Leer menos' : 'Leer más'"
-                      >Leer más</button>
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
@@ -2940,6 +2960,15 @@
                         >La silla es fácil de armar y parece fuerte y estable. Nos gustó mucho.</p>
                     </blockquote>
                   
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
@@ -3020,13 +3049,15 @@
                         >Superó ampliamente nuestras expectativas. Se nota la muy buena calidad, tanto en los materiales como en la terminación: es firme, resistente y segura, algo fundamental cuando se trata de niños. El armado es súper sencillo y viene con todo lo necesario.</p>
                     </blockquote>
                   
-                      <button
-                        type="button"
-                        x-on:click="toggle()"
-                        class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
-                          hover:text-clay-hover"
-                        x-text="open ? 'Leer menos' : 'Leer más'"
-                      >Leer más</button>
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
@@ -3107,6 +3138,15 @@
                         >Excelente producto y terminaciones, muy fácil de armar y el precio bárbaro. Súper recomendable, y la atención del vendedor un 10.</p>
                     </blockquote>
                   
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
@@ -3187,6 +3227,15 @@
                         >Me encantó: se ve sólida y súper fácil de armar. Gracias por el regalito, a mi bebita le encantó.</p>
                     </blockquote>
                   
+                    <button
+                      type="button"
+                      x-show="overflows"
+                      x-cloak
+                      x-on:click="toggle()"
+                      class="-mx-2 -mt-2 self-start rounded-lg px-2 py-1 text-small font-medium text-clay
+                        hover:text-clay-hover"
+                      x-text="open ? 'Leer menos' : 'Leer más'"
+                    >Leer más</button>
                   
                     <div class="mt-auto flex flex-col gap-3">
                   
