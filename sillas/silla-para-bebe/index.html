@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-Dw8ZskeE.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CvySLB7l.css">
+    <script type="module" crossorigin src="/assets/main-Bb7_OlEz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-I_Rwna7t.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data data-cart-max="10">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -1939,10 +1939,10 @@
                   x-for="line in lines"
                   x-bind:key="line.productId + '--' + (line.variantId ?? '')"
                 >
-                  <li class="flex gap-3 border-b border-line py-3 last:border-b-0">
+                  <li class="relative flex gap-3 border-b border-line py-3 last:border-b-0">
                     <a
                       x-bind:href="line.href"
-                      class="block size-20 shrink-0 self-start overflow-hidden rounded-lg bg-sand"
+                      class="block w-20 shrink-0 self-stretch overflow-hidden rounded-lg bg-sand"
                     >
                       <template x-if="line.photo">
                         <img
@@ -1952,13 +1952,13 @@
                           x-bind:alt="line.name"
                           width="80"
                           height="80"
-                          class="size-20 object-cover"
+                          class="h-full w-full object-cover"
                           loading="lazy"
                           decoding="async"
                         />
                       </template>
                       <template x-if="!line.photo">
-                        <span class="flex size-20 items-center justify-center text-charcoal/45">
+                        <span class="flex h-full w-full items-center justify-center text-charcoal/45">
                           <svg
                             class="icon-stroke size-6 shrink-0 fill-none"
                             aria-hidden="true"
@@ -1968,25 +1968,9 @@
                     </a>
                   
                     <div class="flex min-w-0 flex-1 flex-col gap-1">
-                      <div class="flex items-start justify-between gap-2">
-                        <a x-bind:href="line.href" class="min-w-0 hover:text-clay">
-                          <span class="line-clamp-2 text-small" x-text="line.name"></span>
-                        </a>
-                  
-                        <button
-                          type="button"
-                          x-on:click="remove(line)"
-                          class="-mt-2 -mr-2 flex size-11 shrink-0 items-center justify-center rounded-lg
-                            text-charcoal/70 transition-colors duration-150 hover:bg-sand-hover
-                            hover:text-charcoal"
-                        >
-                          <span class="sr-only">Eliminar del carrito</span>
-                          <svg
-                            class="icon-stroke size-5 shrink-0 fill-none"
-                            aria-hidden="true"
-                          ><use href="#icon-trash-2"></use></svg>
-                        </button>
-                      </div>
+                      <a x-bind:href="line.href" class="min-w-0 pr-9 hover:text-clay">
+                        <span class="line-clamp-2 text-small" x-text="line.name"></span>
+                      </a>
                   
                       <p x-show="line.variant" class="flex items-center gap-2 text-caption text-charcoal/70">
                         <span
@@ -2000,7 +1984,7 @@
                   
                       <p x-show="!line.inStock" class="text-caption text-warning">Quedó sin stock</p>
                   
-                      <div class="mt-auto flex items-center justify-between gap-2">
+                      <div class="mt-1 flex items-center justify-between gap-2">
                         <div class="flex flex-col gap-2"
                           
                         >
@@ -2065,6 +2049,20 @@
                         </div>
                       </div>
                     </div>
+                  
+                    <button
+                      type="button"
+                      x-on:click="remove(line)"
+                      class="absolute top-1 right-0 flex size-11 items-center justify-center rounded-lg
+                        text-charcoal/70 transition-colors duration-150 hover:bg-sand-hover
+                        hover:text-charcoal"
+                    >
+                      <span class="sr-only">Eliminar del carrito</span>
+                      <svg
+                        class="icon-stroke size-5 shrink-0 fill-none"
+                        aria-hidden="true"
+                      ><use href="#icon-trash-2"></use></svg>
+                    </button>
                   </li>
                 </template>
               </ul>
