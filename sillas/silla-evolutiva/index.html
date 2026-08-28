@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-CKkW1bUP.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-DsWQ1zBl.css">
+    <script type="module" crossorigin src="/assets/main-CG4XaX-f.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-Bc08-0Ma.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data>
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -848,8 +848,7 @@
                 <div class="flex flex-col gap-2"
                   x-data="quantity({ max: 10 })"
                 >
-                  <label for="cantidad" class="text-small font-medium"
-                    >Cantidad</label>
+                    <label for="cantidad" class="text-small font-medium">Cantidad</label>
                 
                   <div class="flex w-fit items-center rounded-md border border-border bg-sand">
                     <button
@@ -895,9 +894,9 @@
                     </button>
                   </div>
                 
-                  <p id="cantidad-message" class="min-h-6 text-small text-charcoal/70">
-                    <span x-cloak x-show="atMax">Máximo 10 por pedido</span>
-                  </p>
+                    <p id="cantidad-message" class="min-h-6 text-small text-charcoal/70">
+                      <span x-cloak x-show="atMax">Máximo 10 por pedido</span>
+                    </p>
                 </div>
             
                 <div class="flex flex-col gap-3">
@@ -960,6 +959,35 @@
                 </div>
               </div>
             
+              <div x-show="!inStock" x-cloak>
+                  <button
+                    type="button"
+                    
+                    
+                    
+                    
+                    
+                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                
+                
+                min-h-14 min-w-24 px-8 text-body lg:min-h-13
+                
+                w-full
+                  
+                  border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                  
+                  
+                "
+                  >
+                      <span class="inline-flex items-center gap-2 ">
+                        
+                        <span 
+                          >Avisame cuando vuelva</span>
+                        
+                      </span>
+                  </button>
+              </div>
             
               <div data-buy-anchor aria-hidden="true"></div>
             
@@ -1493,7 +1521,7 @@
         </section>
           <section class="page-container mt-12 lg:mt-16">
             <h2 class="font-display text-h3 lg:text-h3-lg">También te puede gustar</h2>
-            <div class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-6">
+            <div class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
                 <article
                   class="relative isolate flex h-full flex-col gap-3 rounded-xl border border-line bg-cream p-3
                     transition-colors duration-150 hover:border-border
@@ -1801,7 +1829,7 @@
             </div>
         
             <div class="shrink-0">
-              <span x-show="!inCart">
+              <span x-show="inStock && !inCart">
                   <button
                     type="button"
                     x-on:click="add()"
@@ -1830,7 +1858,7 @@
                       </span>
                   </button>
               </span>
-              <span x-show="inCart" x-cloak>
+              <span x-show="inStock && inCart" x-cloak>
                   <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
                 transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
                 
@@ -1854,6 +1882,35 @@
                       
                     </span>
                   </a>
+              </span>
+              <span x-show="!inStock" x-cloak>
+                  <button
+                    type="button"
+                    
+                    
+                    
+                    
+                    
+                    class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                
+                min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                
+                
+                
+                  
+                  border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                  
+                  
+                "
+                  >
+                      <span class="inline-flex items-center gap-2 ">
+                        
+                        <span 
+                          >Avisame cuando vuelva</span>
+                        
+                      </span>
+                  </button>
               </span>
             </div>
           </div>
@@ -2329,8 +2386,7 @@
                         <div class="flex flex-col gap-2"
                           
                         >
-                          <label for="qty-linea" class="sr-only"
-                            >Cantidad</label>
+                            <span class="sr-only">Cantidad</span>
                         
                           <div class="flex w-fit items-center rounded-md border border-border bg-sand">
                             <button
@@ -2368,9 +2424,9 @@
                             </button>
                           </div>
                         
-                          <p id="qty-linea-message" class="min-h-6 text-small text-charcoal/70">
-                            <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
-                          </p>
+                            <p class="min-h-6 text-caption text-charcoal/70">
+                              <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
+                            </p>
                         </div>
                   
                         <div class="flex flex-col gap-1 ">

@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-CKkW1bUP.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-DsWQ1zBl.css">
+    <script type="module" crossorigin src="/assets/main-CG4XaX-f.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-Bc08-0Ma.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data>
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -2641,8 +2641,7 @@
             <div class="flex flex-col gap-2"
               x-data="quantity({ max: 10 })"
             >
-              <label for="q-demo" class="text-small font-medium"
-                >Cantidad</label>
+                <label for="q-demo" class="text-small font-medium">Cantidad</label>
             
               <div class="flex w-fit items-center rounded-md border border-border bg-sand">
                 <button
@@ -2688,9 +2687,9 @@
                 </button>
               </div>
             
-              <p id="q-demo-message" class="min-h-6 text-small text-charcoal/70">
-                <span x-cloak x-show="atMax">Máximo 10 por pedido</span>
-              </p>
+                <p id="q-demo-message" class="min-h-6 text-small text-charcoal/70">
+                  <span x-cloak x-show="atMax">Máximo 10 por pedido</span>
+                </p>
             </div>
           </div>
           <p class="mt-4 max-w-prose text-small text-charcoal/70">
@@ -6038,10 +6037,29 @@
                           itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"
                       >
                 
-                          <span itemprop="name" aria-current="page"
-                            ></span>
+                          <a href="/" itemprop="item"
+                            class="rounded-sm hover:text-charcoal"
+                          >
+                            <span itemprop="name">Inicio</span>
+                          </a>
                 
-                        <meta itemprop="position" content="" />
+                        <meta itemprop="position" content="1" />
+                
+                          <span class="hidden sm:inline" aria-hidden="true">/</span>
+                      </li>
+                      <li
+                        class="flex items-center gap-2 "
+                          itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"
+                      >
+                          <svg
+                            class="icon-stroke size-4 sm:hidden shrink-0 fill-none"
+                            aria-hidden="true"
+                          ><use href="#icon-chevron-left"></use></svg>
+                
+                          <span itemprop="name" aria-current="page"
+                            >Sillas</span>
+                
+                        <meta itemprop="position" content="2" />
                 
                           <span class="hidden sm:inline" aria-hidden="true">/</span>
                       </li>
@@ -6051,11 +6069,10 @@
                       >
                 
                           <span itemprop="name" aria-current="page"
-                            ></span>
+                            >Silla Evolutiva</span>
                 
-                        <meta itemprop="position" content="" />
+                        <meta itemprop="position" content="3" />
                 
-                          <span class="hidden sm:inline" aria-hidden="true">/</span>
                       </li>
                   </ol>
                 </nav>
@@ -6294,8 +6311,7 @@
                       <div class="flex flex-col gap-2"
                         
                       >
-                        <label for="qty-linea" class="sr-only"
-                          >Cantidad</label>
+                          <span class="sr-only">Cantidad</span>
                       
                         <div class="flex w-fit items-center rounded-md border border-border bg-sand">
                           <button
@@ -6333,9 +6349,9 @@
                           </button>
                         </div>
                       
-                        <p id="qty-linea-message" class="min-h-6 text-small text-charcoal/70">
-                          <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
-                        </p>
+                          <p class="min-h-6 text-caption text-charcoal/70">
+                            <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
+                          </p>
                       </div>
                 
                       <div class="flex flex-col gap-1 ">
@@ -6876,8 +6892,7 @@
                         <div class="flex flex-col gap-2"
                           
                         >
-                          <label for="qty-linea" class="sr-only"
-                            >Cantidad</label>
+                            <span class="sr-only">Cantidad</span>
                         
                           <div class="flex w-fit items-center rounded-md border border-border bg-sand">
                             <button
@@ -6915,9 +6930,9 @@
                             </button>
                           </div>
                         
-                          <p id="qty-linea-message" class="min-h-6 text-small text-charcoal/70">
-                            <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
-                          </p>
+                            <p class="min-h-6 text-caption text-charcoal/70">
+                              <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
+                            </p>
                         </div>
                   
                         <div class="flex flex-col gap-1 ">
