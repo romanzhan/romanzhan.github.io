@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-Bmf_skb9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-D_1sGN4Q.css">
+    <script type="module" crossorigin src="/assets/main-CiQT_Hds.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BKj1rqgG.css">
   </head>
   <body class="flex min-h-dvh flex-col">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -383,6 +383,9 @@
     
           <a
             href="/carrito/"
+            x-on:click="openCart($event)"
+            x-bind:aria-expanded="$store.overlay.is('cart')"
+            aria-controls="carrito-panel"
             class="relative flex size-12 items-center justify-center rounded-lg
               hover:bg-sand-hover"
           >
@@ -434,21 +437,20 @@
         <nav aria-label="Ruta de navegación">
           <ol
             class="flex flex-wrap items-center gap-x-2 gap-y-1 text-small text-charcoal/70"
-            itemscope
-            itemtype="https://schema.org/BreadcrumbList"
+            itemscope itemtype="https://schema.org/BreadcrumbList"
           >
               <li
                 class="flex items-center gap-2 "
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem"
+                  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"
               >
                   <svg
                     class="icon-stroke size-4 sm:hidden shrink-0 fill-none"
                     aria-hidden="true"
                   ><use href="#icon-chevron-left"></use></svg>
         
-                  <a href="/" itemprop="item" class="rounded-sm hover:text-charcoal">
+                  <a href="/" itemprop="item"
+                    class="rounded-sm hover:text-charcoal"
+                  >
                     <span itemprop="name">Inicio</span>
                   </a>
         
@@ -458,12 +460,11 @@
               </li>
               <li
                 class="flex items-center gap-2 hidden sm:flex"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="https://schema.org/ListItem"
+                  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"
               >
         
-                  <span itemprop="name" aria-current="page">Accesorios Montessori</span>
+                  <span itemprop="name" aria-current="page"
+                    >Accesorios Montessori</span>
         
                 <meta itemprop="position" content="2" />
         
@@ -1513,6 +1514,277 @@
         </div>
       </div>
     </footer>
+    <div x-data="overlayPanel('cart')" x-cloak>
+      <div
+        x-show="open"
+        x-on:click="close()"
+        x-transition.opacity.duration.200ms
+        class="fixed inset-0 z-30 bg-charcoal/40"
+        aria-hidden="true"
+      ></div>
+    
+      <div
+        x-show="open"
+        x-on:click="follow($event)"
+        x-on:keydown.escape.window="open && close()"
+        x-transition:enter="transition duration-200 ease-out"
+        x-transition:enter-start="translate-y-full sm:translate-x-full sm:translate-y-0"
+        x-transition:enter-end="translate-y-0 sm:translate-x-0"
+        x-transition:leave="transition duration-200 ease-in"
+        x-transition:leave-start="translate-y-0 sm:translate-x-0"
+        x-transition:leave-end="translate-y-full sm:translate-x-full sm:translate-y-0"
+        id="carrito-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="carrito-titulo"
+        class="fixed inset-x-0 bottom-0 z-30 flex max-h-dvh flex-col rounded-t-2xl bg-cream
+          sm:inset-y-0 sm:right-0 sm:left-auto sm:w-100 sm:max-w-full sm:rounded-none"
+      >
+        <div class="page-container flex h-(--header-h) shrink-0 items-center justify-between">
+          <h2 id="carrito-titulo" class="text-h4">Tu carrito</h2>
+          <button
+            type="button"
+            x-ref="first"
+            x-on:click="close()"
+            class="-mr-3 flex size-12 items-center justify-center rounded-lg hover:bg-sand-hover"
+          >
+            <span class="sr-only">Cerrar</span>
+            <svg
+              class="icon-stroke size-6 shrink-0 fill-none"
+              aria-hidden="true"
+            ><use href="#icon-x"></use></svg>
+          </button>
+        </div>
+    
+        <div class="flex min-h-0 flex-1 flex-col" x-data="cartView(10)">
+          <div x-show="!ready" class="page-container py-10 text-center">
+            <span class="inline-flex text-charcoal/70">
+              <svg
+                class="icon-stroke size-6 animate-spin shrink-0 fill-none"
+                aria-hidden="true"
+              ><use href="#icon-loader-circle"></use></svg>
+            </span>
+          </div>
+        
+          <template x-if="ready && !lines.length">
+            <div class="page-container py-10 text-center">
+              <p class="text-lead">Tu carrito está vacío.</p>
+              <div class="mt-4 flex justify-center">
+                  <a href="/sillas/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                
+                min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                
+                
+                
+                  bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                  
+                  
+                  
+                " >
+                    <span class="inline-flex items-center gap-2">
+                      
+                      Ver sillas
+                      
+                    </span>
+                  </a>
+              </div>
+            </div>
+          </template>
+        
+          <template x-if="ready && lines.length">
+            <div
+              class="flex min-h-0 flex-1 flex-col
+                "
+            >
+              <ul
+                class="page-container scrollbar-soft min-h-0 flex-1 overflow-y-auto
+                  overscroll-contain"
+              >
+                <template
+                  x-for="line in lines"
+                  x-bind:key="line.productId + '--' + (line.variantId ?? '')"
+                >
+                  <li class="flex gap-3 border-b border-line py-4 last:border-b-0">
+                    <a x-bind:href="line.href" class="shrink-0 overflow-hidden rounded-lg bg-sand">
+                      <template x-if="line.photo">
+                        <img
+                          x-bind:src="line.photo.src"
+                          x-bind:srcset="line.photo.srcset"
+                          sizes="80px"
+                          x-bind:alt="line.name"
+                          width="80"
+                          height="80"
+                          class="size-20 object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </template>
+                      <template x-if="!line.photo">
+                        <span class="flex size-20 items-center justify-center text-charcoal/45">
+                          <svg
+                            class="icon-stroke size-6 shrink-0 fill-none"
+                            aria-hidden="true"
+                          ><use href="#icon-image"></use></svg>
+                        </span>
+                      </template>
+                    </a>
+                  
+                    <div class="flex min-w-0 flex-1 flex-col gap-1">
+                      <div class="flex items-start justify-between gap-2">
+                        <a x-bind:href="line.href" class="min-w-0 hover:text-clay">
+                          <span class="line-clamp-2 text-body" x-text="line.name"></span>
+                        </a>
+                  
+                        <button
+                          type="button"
+                          x-on:click="remove(line)"
+                          class="-mt-2 -mr-2 flex size-11 shrink-0 items-center justify-center rounded-lg
+                            text-charcoal/70 transition-colors duration-150 hover:bg-sand-hover
+                            hover:text-charcoal"
+                        >
+                          <span class="sr-only">Eliminar del carrito</span>
+                          <svg
+                            class="icon-stroke size-5 shrink-0 fill-none"
+                            aria-hidden="true"
+                          ><use href="#icon-x"></use></svg>
+                        </button>
+                      </div>
+                  
+                      <p x-show="line.variant" class="text-small text-charcoal/70" x-text="line.variant"></p>
+                  
+                      <p x-show="!line.inStock" class="text-small text-warning">Quedó sin stock</p>
+                  
+                      <div class="mt-1 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center rounded-md border border-border bg-sand">
+                          <button
+                            type="button"
+                            x-on:click="step(line, -1)"
+                            x-bind:disabled="line.qty <= 1"
+                            class="flex size-10 items-center justify-center rounded-l-md text-charcoal
+                              hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45"
+                          >
+                            <span class="sr-only">Restar uno</span>
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-minus"></use></svg>
+                          </button>
+                  
+                          <span class="min-w-8 text-center text-body" x-text="line.qty"></span>
+                  
+                          <button
+                            type="button"
+                            x-on:click="step(line, 1)"
+                            x-bind:disabled="line.atMax"
+                            class="flex size-10 items-center justify-center rounded-r-md text-charcoal
+                              hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45"
+                          >
+                            <span class="sr-only">Sumar uno</span>
+                            <svg
+                              class="icon-stroke size-4 shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-plus"></use></svg>
+                          </button>
+                        </div>
+                  
+                        <p class="text-body font-medium" x-text="fmt(line.sum)"></p>
+                      </div>
+                  
+                      <p x-show="line.atMax" class="text-caption text-charcoal/70">
+                        Máximo 10 por pedido
+                      </p>
+                    </div>
+                  </li>
+                </template>
+              </ul>
+        
+              <div
+                class="page-container pb-safe shrink-0 border-t border-line pt-4
+                  "
+              >
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-baseline justify-between gap-4">
+                    <span class="text-small text-charcoal/70">Subtotal</span>
+                    <span class="text-body" x-text="fmt(subtotal)"></span>
+                  </div>
+                
+                  <div class="flex items-baseline justify-between gap-4">
+                    <span class="text-small text-charcoal/70">Envío</span>
+                    <span class="text-small text-charcoal/70">Se calcula en el checkout</span>
+                  </div>
+                
+                  <div class="mt-1 flex items-baseline justify-between gap-4 border-t border-line pt-3">
+                    <span class="text-body font-medium">Total</span>
+                    <span class="font-display text-h4 lg:text-h4-lg" x-text="fmt(subtotal)"></span>
+                  </div>
+                </div>
+        
+                <div class="mt-4 flex flex-col gap-2">
+                    <a href="/checkout/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                  transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                  
+                  
+                  min-h-14 min-w-24 px-8 text-body lg:min-h-13
+                  
+                  w-full
+                    bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                    
+                    
+                    
+                  " >
+                      <span class="inline-flex items-center gap-2">
+                        
+                        Finalizar compra
+                        
+                      </span>
+                    </a>
+                      <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                    
+                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                    
+                    
+                    w-full
+                      
+                      
+                      text-clay hover:text-clay-hover active:text-clay-active
+                      
+                    " >
+                        <span class="inline-flex items-center gap-2">
+                          
+                          Ver carrito
+                          
+                        </span>
+                      </a>
+                </div>
+              </div>
+            </div>
+          </template>
+        
+          <div
+            x-show="undo"
+            x-cloak
+            x-transition.opacity.duration.200ms
+            role="status"
+            class="bottom-safe fixed inset-x-0 z-50 flex justify-center px-4"
+          >
+            <div
+              class="surface-dark flex max-w-full items-center gap-4 rounded-lg bg-charcoal px-4 py-3
+                text-cream shadow-lg"
+            >
+              <span class="min-w-0 truncate text-small">Eliminado del carrito</span>
+              <button
+                type="button"
+                x-on:click="restore()"
+                class="shrink-0 text-small font-medium underline underline-offset-2
+                  hover:text-cream/75"
+              >Deshacer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <a
       href="https://wa.me/5491127915729"
       target="_blank"
