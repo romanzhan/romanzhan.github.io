@@ -58,17 +58,21 @@
         add('не отрисовались', imgs.filter((i) => i.complete && i.naturalWidth === 0).length,
           imgs.some((i) => i.complete && i.naturalWidth === 0))
 
-        // Самые высокие блоки страницы: если раздулось что-то неожиданное, оно всплывёт тут
-        const tall = [...doc.querySelectorAll('main *')]
-          .map((node) => [node, Math.round(node.getBoundingClientRect().height)])
-          .filter(([node, h]) => h > 800 && node.children.length < 12)
-          .slice(0, 4)
-        for (const [node, h] of tall) {
-          const name = node.tagName.toLowerCase() +
-            (node.className && typeof node.className === 'string'
-              ? '.' + node.className.split(' ').slice(0, 2).join('.')
-              : '')
-          add('высокий: ' + name, h + ' px', true)
+        // Кто вылезает вправо за край окна — с именем и правой границей
+        const name = (node) => node.tagName.toLowerCase() +
+          (node.className && typeof node.className === 'string'
+            ? '.' + node.className.split(' ').slice(0, 3).join('.')
+            : '')
+
+        const wide = [...doc.querySelectorAll('body *')]
+          .map((node) => [node, node.getBoundingClientRect()])
+          .filter(([, r]) => r.right > win.innerWidth + 2 && r.width > 0)
+          .sort((a, b) => b[1].right - a[1].right)
+          .slice(0, 6)
+
+        add('вылезают вправо', wide.length, wide.length > 0)
+        for (const [node, r] of wide) {
+          add('→ ' + name(node), Math.round(r.right) + ' px', true)
         }
 
         document.getElementById('state').textContent = 'Готово. Пришлите снимок этого экрана.'
