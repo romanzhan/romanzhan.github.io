@@ -17,7 +17,7 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-BMMje4Ff.js"></script>
+    <script type="module" crossorigin src="/assets/main-CbfIjf6k.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/main-CxV2-Vg9.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data>
@@ -1732,6 +1732,8 @@
         x-transition:leave-start="translate-y-0 opacity-100"
         x-transition:leave-end="translate-y-4 opacity-0"
         id="carrito-panel"
+        x-ref="first"
+        tabindex="-1"
         role="dialog"
         aria-modal="true"
         aria-labelledby="carrito-titulo"
@@ -1742,7 +1744,6 @@
           <h2 id="carrito-titulo" class="text-h4">Tu carrito</h2>
           <button
             type="button"
-            x-ref="first"
             x-on:click="close()"
             class="-mr-3 flex size-12 items-center justify-center rounded-lg hover:bg-sand-hover"
           >
