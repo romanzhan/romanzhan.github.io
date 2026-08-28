@@ -17,8 +17,8 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-CKyoSEzC.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CPvKgHT1.css">
+    <script type="module" crossorigin src="/assets/main-CiTXHyRs.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BDOocBct.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data data-cart-max="10">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -1390,91 +1390,38 @@
                   x-for="line in lines"
                   x-bind:key="line.productId + '--' + (line.variantId ?? '')"
                 >
-                  <li class="flex gap-3 border-b border-line py-4 last:border-b-0">
-                    <div class="flex w-28 shrink-0 flex-col gap-2">
-                      <a
-                        x-bind:href="line.href"
-                        class="block size-28 overflow-hidden rounded-lg bg-sand"
-                      >
-                        <template x-if="line.photo">
-                          <img
-                            x-bind:src="line.photo.src"
-                            x-bind:srcset="line.photo.srcset"
-                            sizes="112px"
-                            x-bind:alt="line.name"
-                            width="112"
-                            height="112"
-                            class="size-28 object-cover"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </template>
-                        <template x-if="!line.photo">
-                          <span class="flex size-28 items-center justify-center text-charcoal/45">
-                            <svg
-                              class="icon-stroke size-6 shrink-0 fill-none"
-                              aria-hidden="true"
-                            ><use href="#icon-image"></use></svg>
-                          </span>
-                        </template>
-                      </a>
-                  
-                      <div class="flex flex-col gap-2"
-                        
-                      >
-                          <span class="sr-only">Cantidad</span>
-                      
-                        <div
-                          class="flex items-center rounded-md border border-border bg-sand
-                            w-full"
-                        >
-                          <button
-                            type="button"
-                            class="flex shrink-0 items-center justify-center rounded-l-md text-charcoal
-                              hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45
-                              size-11"
-                            aria-label="Restar uno"
-                            :disabled="line.qty &lt;&#x3D; 1"
-                            @click="step(line, -1)"
-                          >
-                            <svg
-                              class="icon-stroke size-5 shrink-0 fill-none"
-                              aria-hidden="true"
-                            ><use href="#icon-minus"></use></svg>
-                          </button>
-                      
-                            <span
-                              class="flex h-11 min-w-0 flex-1 items-center justify-center border-x border-border
-                                bg-sand text-center text-body tabular-nums"
-                              x-text="line.qty"
-                            ></span>
-                      
-                          <button
-                            type="button"
-                            class="flex shrink-0 items-center justify-center rounded-r-md text-charcoal
-                              hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45
-                              size-11"
-                            aria-label="Sumar uno"
-                            :disabled="line.atMax"
-                            @click="step(line, 1)"
-                          >
-                            <svg
-                              class="icon-stroke size-5 shrink-0 fill-none"
-                              aria-hidden="true"
-                            ><use href="#icon-plus"></use></svg>
-                          </button>
-                        </div>
-                      
-                          <p class="min-h-6 text-caption text-charcoal/70">
-                            <span x-cloak x-show="line.atMax">Máximo 10 por pedido</span>
-                          </p>
-                      </div>
-                    </div>
+                  <li class="flex gap-3 border-b border-line py-3 last:border-b-0">
+                    <a
+                      x-bind:href="line.href"
+                      class="block size-20 shrink-0 self-start overflow-hidden rounded-lg bg-sand"
+                    >
+                      <template x-if="line.photo">
+                        <img
+                          x-bind:src="line.photo.src"
+                          x-bind:srcset="line.photo.srcset"
+                          sizes="80px"
+                          x-bind:alt="line.name"
+                          width="80"
+                          height="80"
+                          class="size-20 object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </template>
+                      <template x-if="!line.photo">
+                        <span class="flex size-20 items-center justify-center text-charcoal/45">
+                          <svg
+                            class="icon-stroke size-6 shrink-0 fill-none"
+                            aria-hidden="true"
+                          ><use href="#icon-image"></use></svg>
+                        </span>
+                      </template>
+                    </a>
                   
                     <div class="flex min-w-0 flex-1 flex-col gap-1">
                       <div class="flex items-start justify-between gap-2">
                         <a x-bind:href="line.href" class="min-w-0 hover:text-clay">
-                          <span class="line-clamp-2 text-body" x-text="line.name"></span>
+                          <span class="line-clamp-2 text-small" x-text="line.name"></span>
                         </a>
                   
                         <button
@@ -1492,19 +1439,67 @@
                         </button>
                       </div>
                   
-                      <p x-show="line.variant" class="flex items-center gap-2 text-small text-charcoal/70">
+                      <p x-show="line.variant" class="flex items-center gap-2 text-caption text-charcoal/70">
                         <span
                           x-show="line.swatch"
                           x-bind:style="line.swatch && ('background-color: ' + line.swatch)"
-                          class="size-4 shrink-0 rounded-full border border-border"
+                          class="size-3 shrink-0 rounded-full border border-border"
                           aria-hidden="true"
                         ></span>
                         <span x-text="line.variant"></span>
                       </p>
                   
-                      <p x-show="!line.inStock" class="text-small text-warning">Quedó sin stock</p>
+                      <p x-show="!line.inStock" class="text-caption text-warning">Quedó sin stock</p>
                   
-                      <div class="mt-auto flex justify-end pt-2">
+                      <div class="mt-auto flex items-center justify-between gap-2">
+                        <div class="flex flex-col gap-2"
+                          
+                        >
+                            <span class="sr-only">Cantidad</span>
+                        
+                          <div class="flex w-fit items-center rounded-md border border-border bg-sand">
+                            <button
+                              type="button"
+                              class="flex shrink-0 items-center justify-center rounded-l-md text-charcoal
+                                hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45
+                                size-11"
+                              aria-label="Restar uno"
+                              :disabled="line.qty &lt;&#x3D; 1"
+                              @click="step(line, -1)"
+                            >
+                              <svg
+                                class="icon-stroke size-5 shrink-0 fill-none"
+                                aria-hidden="true"
+                              ><use href="#icon-minus"></use></svg>
+                            </button>
+                        
+                              <span
+                                class="flex size-11 items-center justify-center border-x border-border bg-sand
+                                  text-center text-body tabular-nums"
+                                x-text="line.qty"
+                              ></span>
+                        
+                            <button
+                              type="button"
+                              class="flex shrink-0 items-center justify-center rounded-r-md text-charcoal
+                                hover:bg-sand-hover disabled:pointer-events-none disabled:opacity-45
+                                size-11"
+                              aria-label="Sumar uno"
+                              :disabled="line.atMax"
+                              @click="step(line, 1)"
+                            >
+                              <svg
+                                class="icon-stroke size-5 shrink-0 fill-none"
+                                aria-hidden="true"
+                              ><use href="#icon-plus"></use></svg>
+                            </button>
+                          </div>
+                        
+                            <p x-cloak x-show="line.atMax" class="text-caption text-charcoal/70">
+                              Máximo 10 por pedido
+                            </p>
+                        </div>
+                  
                         <div class="flex flex-col gap-1 ">
                           <p class="flex flex-wrap items-baseline gap-2">
                         
@@ -1526,10 +1521,10 @@
               </ul>
         
               <div
-                class="page-container pb-safe shrink-0 border-t border-line pt-4
+                class="page-container pb-safe shrink-0 border-t border-line pt-3
                   "
               >
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-1">
                   <div class="flex items-baseline justify-between gap-4">
                     <span class="text-small text-charcoal/70">Subtotal</span>
                     <div class="flex flex-col gap-1 ">
@@ -1553,7 +1548,7 @@
                     <span class="text-small text-charcoal/70">Se calcula en el checkout</span>
                   </div>
                 
-                  <div class="mt-1 flex items-baseline justify-between gap-4 border-t border-line pt-3">
+                  <div class="mt-1 flex items-baseline justify-between gap-4 border-t border-line pt-2">
                     <span class="text-body font-medium">Total</span>
                     <div class="flex flex-col gap-1 ">
                       <p class="flex flex-wrap items-baseline gap-2">
@@ -1572,7 +1567,7 @@
                   </div>
                 </div>
         
-                <div class="mt-4 flex flex-col gap-2">
+                <div class="mt-3 flex flex-col gap-2">
                     <a href="/checkout/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
                   transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
                   
@@ -1594,8 +1589,8 @@
                     </a>
                       <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
                     transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                    min-h-10 min-w-24 px-4 text-small lg:min-h-9
                     
-                    min-h-12 min-w-24 px-6 text-body lg:min-h-11
                     
                     
                     w-full
