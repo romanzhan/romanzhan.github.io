@@ -3,8 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Notas para madres y padres</title>
-    <meta name="robots" content="noindex" />
+    <title>Blog | Madera Más</title>
+      <meta name="description" content="Notas para madres y padres: cómo elegir, usar y cuidar los muebles de los chicos." />
+    <link rel="canonical" href="https://www.maderamas.com.ar/blog/" />
+    
+
+      <meta property="og:site_name" content="Madera Más" />
+      <meta property="og:locale" content="es_AR" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blog | Madera Más" />
+        <meta property="og:description" content="Notas para madres y padres: cómo elegir, usar y cuidar los muebles de los chicos." />
+      <meta property="og:url" content="https://www.maderamas.com.ar/blog/" />
+        <meta property="og:image" content="https://www.maderamas.com.ar/images/og-brand-1200-480b409c.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,8 +36,10 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-C4DwZSwC.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-DdHlLyqg.css">
+
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.maderamas.com.ar/#organization","name":"Madera Más","url":"https://www.maderamas.com.ar/","logo":"https://www.maderamas.com.ar/icon-512.png","email":"madera.mas.arg@gmail.com","telephone":"+54 9 11 2791-5729","sameAs":["https://instagram.com/madera.mas.arg"],"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"AR","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":10,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/FreeReturn"}}</script>
+    <script type="module" crossorigin src="/assets/main-BztGjUIT.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-Cb4TOtzE.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data data-cart-max="10">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -1729,13 +1750,29 @@
                             class="flex items-center gap-3 rounded-lg p-2 pr-4 hover:bg-sand-hover"
                           >
                             <span
-                              class="flex size-12 shrink-0 items-center justify-center rounded-md bg-sand
-                                text-border"
-                            ><svg
-            class="icon-stroke size-6 shrink-0 fill-none"
-            aria-hidden="true"
-          ><use href="#icon-image"></use></svg>
-          </span>
+                              class="flex size-12 shrink-0 items-center justify-center overflow-hidden
+                                rounded-md bg-sand text-border"
+                            >
+                              <template x-if="option.photo">
+                                <img
+                                  x-bind:src="option.photo.src"
+                                  x-bind:srcset="option.photo.srcset"
+                                  sizes="48px"
+                                  alt=""
+                                  width="48"
+                                  height="48"
+                                  class="size-full object-cover"
+                                  loading="lazy"
+                                  decoding="async"
+                                />
+                              </template>
+                              <template x-if="!option.photo">
+                                <svg
+                                  class="icon-stroke size-6 shrink-0 fill-none"
+                                  aria-hidden="true"
+                                ><use href="#icon-image"></use></svg>
+                              </template>
+                            </span>
                             <span
                               x-html="option.html"
                               x-bind:class="!option.inStock && 'text-charcoal/70'"
@@ -1835,6 +1872,235 @@
                   ><use href="#icon-arrow-right"></use></svg>
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        x-data="overlayPanel('notify')"
+        x-cloak
+        x-on:notify:ask.window="$store.overlay.open('notify')"
+      >
+        <div
+          x-show="open"
+          x-on:click="close()"
+          x-transition.opacity.duration.200ms
+          class="fixed inset-0 z-40 bg-charcoal/40"
+          aria-hidden="true"
+        ></div>
+      
+        <div
+          class="pointer-events-none fixed inset-0 z-40 flex items-end justify-center sm:items-center
+            sm:p-4"
+        >
+          <div
+            x-show="open"
+            x-on:keydown.escape.window="open && close()"
+            x-transition:enter="transition duration-200 ease-out"
+            x-transition:enter-start="translate-y-4 opacity-0"
+            x-transition:enter-end="translate-y-0 opacity-100"
+            x-transition:leave="transition duration-200 ease-in"
+            x-transition:leave-start="translate-y-0 opacity-100"
+            x-transition:leave-end="translate-y-4 opacity-0"
+            id="notify-modal"
+            x-ref="first"
+            tabindex="-1"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="notify-titulo"
+            class="max-h-modal pointer-events-auto flex w-full flex-col rounded-t-2xl bg-cream
+              shadow-lg sm:w-140 sm:max-w-full sm:rounded-2xl"
+          >
+            <div class="flex shrink-0 items-center justify-between gap-4 px-4 pt-4 sm:px-6 sm:pt-6">
+              <h2 id="notify-titulo" class="font-display text-h3 lg:text-h3-lg">Avisame cuando vuelva</h2>
+              <button
+                type="button"
+                x-on:click="close()"
+                class="-mr-3 flex size-12 shrink-0 items-center justify-center rounded-lg
+                  hover:bg-sand-hover"
+              >
+                <span class="sr-only">Cerrar</span>
+                <svg
+                  class="icon-stroke size-6 shrink-0 fill-none"
+                  aria-hidden="true"
+                ><use href="#icon-x"></use></svg>
+              </button>
+            </div>
+      
+            <div
+              class="scrollbar-soft pb-safe min-h-0 flex-1 overflow-y-auto px-4 pt-4 sm:px-6 sm:pb-6"
+            >
+                <p class="text-charcoal/70">
+                  Dejanos tu email y te escribimos apenas vuelva a estar disponible:
+                  <span class="font-medium text-charcoal" x-text="$store.notify.name"></span>
+                </p>
+              
+                <div class="mt-4">
+              <div
+                x-data="siteForm({ code: false })"
+                data-toast="Listo. Te avisamos por email cuando vuelva."
+                x-on:form:sent="close()"
+                data-msg-required="Completá este campo"
+                data-msg-email="Revisá el email, parece incompleto"
+                data-msg-email-suggest="¿Quisiste decir {domain}?"
+                data-msg-short="Contanos un poco más"
+                data-msg-check="Revisá lo que escribiste"
+              >
+                <form
+                  x-ref="form"
+                  x-show="!sent"
+                  novalidate
+                  x-on:submit.prevent="submit()"
+                  x-on:input="onInput($event)"
+                  x-on:change="onInput($event); check($event.target)"
+                  x-on:blur.capture="onBlur($event)"
+                  class="flex max-w-prose flex-col gap-4"
+                >
+                  <p class="text-small text-charcoal/70">Los campos con * son obligatorios</p>
+              
+                        <div class="flex flex-col gap-2 ">
+                          <label for="notify-email" class="text-small font-medium ">
+                        Email <span class="text-error" aria-hidden="true">*</span>
+                          </label>
+                        
+                          <div class="relative ">
+                            <input
+                              id="notify-email"
+                              name="email"
+                              type="email"
+                              inputmode="email"
+                              autocomplete="email"
+                              
+                              
+                              
+                              
+                              
+                              required
+                              
+                              
+                              
+                              
+                              
+                              data-check-valid="true"
+                                x-bind:class="{
+                                  'border-error focus:border-error focus:ring-error': errors['email'],
+                                  'border-border focus:border-clay focus:ring-clay': !errors['email'],
+                                }"
+                              aria-describedby="notify-email-message"
+                              class="field-autofill h-12 w-full rounded-md border bg-sand text-body ring-inset
+                        placeholder:text-charcoal/70 focus:ring-1 focus:outline-none lg:h-11
+                        
+                        border-border focus:border-clay focus:ring-clay
+                         px-4
+                                disabled:cursor-not-allowed disabled:bg-sand-hover disabled:text-charcoal/70
+                                [&[readonly]]:bg-cream
+                                pr-11"
+                            />
+                              <span
+                                x-show="valids['email']"
+                                x-cloak
+                                class="absolute inset-y-0 right-4 flex items-center text-success"
+                              ><svg
+                          class="icon-stroke size-5 shrink-0 fill-none"
+                          aria-hidden="true"
+                        ><use href="#icon-check"></use></svg>
+                        </span>
+                              </div>
+                        
+                          <p id="notify-email-message" class="flex min-h-6 text-small">
+                              <span class="flex items-start gap-2">
+                                <span x-show="errors['email']" x-cloak class="icon-line shrink-0 text-error">
+                                  <svg
+                                    class="icon-stroke size-4 shrink-0 fill-none"
+                                    aria-hidden="true"
+                                  ><use href="#icon-circle-alert"></use></svg>
+                                </span>
+                                <span x-show="errors['email']" x-cloak class="text-error" x-text="errors['email']"></span>
+                            
+                                <button
+                                  type="button"
+                                  x-show="!errors['email'] && warnings['email']"
+                                  x-cloak
+                                  x-on:click="acceptSuggestion('email')"
+                                  class="text-left text-warning underline underline-offset-2"
+                                  x-text="warnings['email']"
+                                ></button>
+                            
+                              </span>
+                          </p>
+                        </div>
+              
+                  <div class="sr-only" aria-hidden="true">
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                  </div>
+              
+                  <p x-show="sendFailed" x-cloak role="alert" class="flex items-start gap-2 text-small text-error">
+                    <span class="icon-line shrink-0"><svg
+                class="icon-stroke size-4 shrink-0 fill-none"
+                aria-hidden="true"
+              ><use href="#icon-circle-alert"></use></svg>
+              </span>
+                    No pudimos enviar tus datos. Probá de nuevo en unos minutos o escribinos por WhatsApp.
+                  </p>
+              
+                  <div class="mt-2">
+                      <button
+                        type="submit"
+                        
+                        
+                        
+                        
+                          x-bind:disabled="sending" x-bind:aria-busy="sending"
+                        
+                        class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                    transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                    
+                    
+                    min-h-14 min-w-24 px-8 text-body lg:min-h-13
+                    
+                    
+                      bg-clay text-cream hover:bg-clay-hover active:bg-clay-active
+                      
+                      
+                      
+                    "
+                      >
+                          <span
+                            class="inline-flex items-center gap-2 "
+                            x-bind:class="sending && 'invisible'"
+                          >
+                            
+                            <span 
+                              >Avisarme</span>
+                            
+                          </span>
+                          <span x-show="sending" x-cloak class="absolute inline-flex">
+                            <svg
+                              class="icon-stroke size-5 animate-spin shrink-0 fill-none"
+                              aria-hidden="true"
+                            ><use href="#icon-loader-circle"></use></svg>
+                          </span>
+                      </button>
+                  </div>
+              
+                  <p class="text-small text-charcoal/70">
+                    Al enviar aceptás nuestra
+                    <a
+                      href="/privacidad/"
+                      
+                      class="inline-flex items-center gap-2 transition-colors duration-150
+                          text-clay underline underline-offset-2 visited:text-clay-active hover:text-clay-hover
+                          
+                          
+                          
+                    "
+                      >Política de privacidad</a
+                    >
+                  </p>
+                </form>
+              
+              </div>
+                </div>
             </div>
           </div>
         </div>

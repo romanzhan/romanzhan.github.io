@@ -3,8 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Finalizar compra</title>
+    <title>Finalizar compra | Madera Más</title>
+    <link rel="canonical" href="https://www.maderamas.com.ar/checkout/" />
     <meta name="robots" content="noindex" />
+
+      <meta property="og:site_name" content="Madera Más" />
+      <meta property="og:locale" content="es_AR" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Finalizar compra | Madera Más" />
+      <meta property="og:url" content="https://www.maderamas.com.ar/checkout/" />
+        <meta property="og:image" content="https://www.maderamas.com.ar/images/og-brand-1200-480b409c.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,8 +34,10 @@
           document.documentElement.classList.add('announcement-closed')
       } catch {}
     </script>
-    <script type="module" crossorigin src="/assets/main-C4DwZSwC.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-DdHlLyqg.css">
+
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.maderamas.com.ar/#organization","name":"Madera Más","url":"https://www.maderamas.com.ar/","logo":"https://www.maderamas.com.ar/icon-512.png","email":"madera.mas.arg@gmail.com","telephone":"+54 9 11 2791-5729","sameAs":["https://instagram.com/madera.mas.arg"],"hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","applicableCountry":"AR","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":10,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/FreeReturn"}}</script>
+    <script type="module" crossorigin src="/assets/main-BztGjUIT.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-Cb4TOtzE.css">
   </head>
   <body class="flex min-h-dvh flex-col" x-data data-cart-max="10">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
@@ -379,7 +398,7 @@
                       autocomplete="given-name"
                       
                       
-                      pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&#x27; -]+"
+                      pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&#x27;\- ]+"
                       
                       
                       required
@@ -441,7 +460,7 @@
                       autocomplete="family-name"
                       
                       
-                      pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&#x27; -]+"
+                      pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ&#x27;\- ]+"
                       
                       
                       required
@@ -536,7 +555,7 @@
                   aria-hidden="true"
                 ><use href="#icon-check"></use></svg>
                 </span>
-                  </div>
+                      </div>
                 
                   <p id="co-email-message" class="flex min-h-6 text-small">
                       <span class="flex items-start gap-2">
@@ -607,7 +626,7 @@
                   aria-hidden="true"
                 ><use href="#icon-check"></use></svg>
                 </span>
-                  </div>
+                      </div>
                 
                   <p id="co-telefono-message" class="flex min-h-6 text-small">
                       <span class="flex items-start gap-2">
@@ -1374,15 +1393,36 @@
                     </button>
                 </div>
                 
-                <p x-show="stockChanged" x-cloak role="alert"
-                  class="flex items-start gap-2 rounded-md bg-warning-bg px-3 py-2 text-small text-warning">
-                  <span class="icon-line shrink-0"><svg
+                <div x-show="stockChanged" x-cloak class="flex flex-col items-start gap-3">
+                  <p role="alert" class="flex items-start gap-2 rounded-md bg-warning-bg px-3 py-2 text-small
+                    text-warning">
+                    <span class="icon-line shrink-0"><svg
                   class="icon-stroke size-4 shrink-0 fill-none"
                   aria-hidden="true"
                 ><use href="#icon-circle-alert"></use></svg>
                 </span>
-                  Un producto quedó sin stock. Revisá tu carrito antes de seguir.
-                </p>
+                    Un producto quedó sin stock. Revisá tu carrito antes de seguir.
+                  </p>
+                    <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+                  transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+                  
+                  min-h-12 min-w-24 px-6 text-body lg:min-h-11
+                  
+                  
+                  
+                    
+                    border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                    
+                    
+                  " >
+                      <span class="inline-flex items-center gap-2">
+                        
+                        <span 
+                          >Ver carrito</span>
+                        
+                      </span>
+                    </a>
+                </div>
                 
                 <p x-show="sendFailed" x-cloak role="alert"
                   class="flex items-start gap-2 rounded-md bg-error-bg px-3 py-2 text-small text-error">
@@ -1493,15 +1533,36 @@
                 </button>
             </div>
             
-            <p x-show="stockChanged" x-cloak role="alert"
-              class="flex items-start gap-2 rounded-md bg-warning-bg px-3 py-2 text-small text-warning">
-              <span class="icon-line shrink-0"><svg
+            <div x-show="stockChanged" x-cloak class="flex flex-col items-start gap-3">
+              <p role="alert" class="flex items-start gap-2 rounded-md bg-warning-bg px-3 py-2 text-small
+                text-warning">
+                <span class="icon-line shrink-0"><svg
               class="icon-stroke size-4 shrink-0 fill-none"
               aria-hidden="true"
             ><use href="#icon-circle-alert"></use></svg>
             </span>
-              Un producto quedó sin stock. Revisá tu carrito antes de seguir.
-            </p>
+                Un producto quedó sin stock. Revisá tu carrito antes de seguir.
+              </p>
+                <a href="/carrito/" class="relative inline-flex items-center justify-center gap-2 rounded-lg py-2 text-center font-medium
+              transition-colors duration-150 disabled:pointer-events-none disabled:opacity-45
+              
+              min-h-12 min-w-24 px-6 text-body lg:min-h-11
+              
+              
+              
+                
+                border border-charcoal text-charcoal hover:bg-sand-hover active:bg-sand-active
+                
+                
+              " >
+                  <span class="inline-flex items-center gap-2">
+                    
+                    <span 
+                      >Ver carrito</span>
+                    
+                  </span>
+                </a>
+            </div>
             
             <p x-show="sendFailed" x-cloak role="alert"
               class="flex items-start gap-2 rounded-md bg-error-bg px-3 py-2 text-small text-error">
