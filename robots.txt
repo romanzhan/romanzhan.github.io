@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /_componentes/
-
-Sitemap: https://www.maderamas.com.ar/sitemap.xml
+Disallow: /
